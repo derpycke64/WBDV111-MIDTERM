@@ -1,0 +1,202 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Full-section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+nav{
+    position: relative;
+    background-color: black;
+    padding: 18px 40px 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Gym{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.Gym-logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+.Gym-logo:hover{
+    transform: scale(1.1);
+}
+.Gym-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Gym-text{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.Gym-subtitle{
+    font-size: 14px;
+    font-weight: normal;
+    border-top: 2px solid white;
+    text-align: center;
+}
+.Navbar-links{
+    display: flex;
+    gap: 24px;
+}
+.Navbar-link{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.Navbar-link:hover{
+    color: #f5c200;
+    transition: 0.3s ease;
+}
+.Button-button{
+    display: flex;
+    gap: 12px;
+}
+.Button-link{
+    color:black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 20px;
+}
+.Button-link:hover{
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    transition: 0.3s ease;
+}
+
+/*Main stuff on the left*/
+.Main-thing {
+    display: flex;
+    width: 100%; 
+    min-height: 520px;
+    overflow: hidden;
+}
+.Main-left {
+    flex: 1;
+    background: linear-gradient(135deg, #000000 0%, #111111 40%, #333333 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 56px;
+    position: relative;
+    overflow: hidden;
+}
+.Main-tagline {
+    color: white;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    animation: slideUp 0.7s ease both;
+}
+.Main-tagline .highlight {
+    color: #f5c200;
+    display: block;
+}
+.Main-sub {
+    color: #f5c200;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    animation: slideUp 0.7s 0.15s ease both;
+}
+.Main-search {
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+    animation: slideUp 0.7s 0.3s ease both;
+}
+.Main-search input {
+    flex: 1;
+    padding: 16px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    background: rgba(255,255,255,0.95);
+    color: #333;
+}
+.Main-search input::placeholder { 
+    color: #aaa; 
+}
+.Main-search button {
+    padding: 16px 28px;
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.25s ease;
+    white-space: nowrap;
+}
+.Main-search button:hover {
+     background: #857f7f;
+     color: black; 
+}
+
+/*Main stuff on the right*/
+.Main-right {
+    flex: 0 0 42%;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    margin-left: -60px;
+    z-index: 1;
+}
+.Main-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+.Main-right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+}
+.hero-media-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #111111 40%, #333333 100%);
+}
+
+.somethingsection{
+    width: 100%;
+    height: 400px;
+    background-color: #222;
+}
