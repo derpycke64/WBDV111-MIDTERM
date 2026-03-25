@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation - Luna Vista Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="Resort">
+                <div class="Resort-logo">
+                    <img src="/images/logo.png" alt="Logo" width="28">
+                </div>
+                <div class="Resort-text">
+                    <div class="Resort-name"><a href="index.html"><span>LUNA VISTA</span> RESORT</a></div>
+                    <div class="Resort-subtext"><a href="index.html">Hotels & Resort</a></div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a class="nav-link" href="Aboutus.html">About Us</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="Rooms.html">Rooms</a>
+                <a class="button-book" href="reservation.html">BOOK NOW</a>
+            </div>
+    </nav>            
+
+    <div class="page-title">
+        <h1>Book Your Stay</h1>
+        <p>Fill out the form below to make a reservation.</p>
+    </div>
+
+    <div class="reservation-container">
+
+        <div class="form-section">
+            <form onsubmit="confirmBooking(event)">
+
+                <h2>Stay Details</h2>
+
+                <label for="checkin">Check-In Date</label>
+                <input type="date" id="checkin" required>
+
+                <label for="checkout">Check-Out Date</label>
+                <input type="date" id="checkout" required>
+
+                <label for="adults">Number of Adults</label>
+                <select id="adults">
+                    <option>1</option>
+                    <option selected>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                </select>
+
+                <label for="children">Number of Children</label>
+                <select id="children">
+                    <option selected>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                </select>
+
+                <label for="destination">Destination</label>
+                <select id="destination">
+                    <option>Mactan</option>
+                    <option>Boracay</option>
+                </select>
+
+                <hr>
+
+                <h2>Choose a Room</h2>
+
+                <label><input type="radio" name="room" value="Deluxe Garden Room - P4500"> Deluxe Garden Room - P4,500 / night</label>
+                <label><input type="radio" name="room" value="Ocean View Suite - P8200"> Ocean View Suite - P8,200 / night</label>
+                <label><input type="radio" name="room" value="Beachfront Villa - P18500"> Beachfront Villa - P18,500 / night</label>
+                <label><input type="radio" name="room" value="Family Garden Suite - P11000"> Family Garden Suite - P11,000 / night</label>
+
+                <hr>
+
+                <h2>Your Information</h2>
+
+                <label for="gfname">First Name</label>
+                <input type="text" id="gfname" placeholder="First name" required>
+
+                <label for="glname">Last Name</label>
+                <input type="text" id="glname" placeholder="Last name" required>
+
+                <label for="gemail">Email</label>
+                <input type="email" id="gemail" placeholder="your@email.com" required>
+
+                <label for="gphone">Phone Number</label>
+                <input type="text" id="gphone" placeholder="+63 912 345 6789">
+
+                <label for="requests">Special Requests</label>
+                <textarea id="requests" placeholder="e.g. early check-in, anniversary setup..."></textarea>
+
+                <hr>
+
+                <h2>Payment</h2>
+
+                <label for="payment">Payment Method</label>
+                <select id="payment">
+                    <option>Credit / Debit Card</option>
+                    <option>GCash</option>
+                    <option>Maya</option>
+                    <option>Pay at Resort</option>
+                </select>
+
+                <button type="submit">Confirm Reservation</button>
+
+            </form>
+
+            <p id="success-msg" style="display:none; color:green; font-weight:bold; text-align:center; font-size:18px; padding: 20px;">
+                Reservation confirmed! Thank you for booking with Luna Vista Resort. We will send a confirmation to your email.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Copyright 2025 Luna Vista Resort. All rights reserved.</p>
+    </footer>
+
+<script>
+    function confirmBooking(e) {
+        e.preventDefault();
+        var room = document.querySelector('input[name="room"]:checked');
+        if (!room) {
+            alert('Please select a room type.');
+            return;
+        }
+        document.querySelector('form').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
