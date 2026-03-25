@@ -1,0 +1,444 @@
+/*Navigation bar*/
+.Headerdiv{
+    margin: 0; 
+    margin-top: 0; 
+    padding: 0;
+    overflow-x: hidden;
+}
+.Headerbox{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(3, 3, 3);
+    border-bottom: 3px solid rgb(44, 43, 43);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    gap: 20px;
+    box-sizing: border-box;
+    
+}
+.HeaderLogo {
+    width: 150px;
+    height: auto;
+}
+.Grouplogo{
+    display: flex;
+    align-items: center;
+    gap: 20px;  
+    height: 100%;
+    width: 240px;
+    flex-shrink: 0;
+    z-index: 11;
+    overflow: hidden;
+}
+.Navbar{
+    display: flex; 
+    justify-content: flex-end;
+    float: left;
+}
+.Navbar img:hover{
+    background-color: rgb(44, 43, 43);
+    border-radius: 100px;
+}
+.SearchContainer {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    margin-right: 54%;
+}
+form.Searchbar{
+    border: none;
+    padding: 0;
+}
+input.Searchbar{
+    position: relative; 
+    width: 500px; 
+    max-width: 100%;
+    height: 45px; 
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-color:  rgb(44, 43, 43);
+    color: rgb(194, 190, 190);
+    background-color: rgb(44, 43, 43);
+    border-radius: 10px;
+    background-image: url('../Logos/Searchicon.png');
+    background-repeat: no-repeat;        
+    background-position: 15px center;   
+    background-size: 25px;               
+    padding-left: 50px;                  
+    box-sizing: border-box;
+}
+.Searchbar:focus{
+    background-color: rgb(44, 43, 43);
+    border-color: rgb(44, 43, 43);
+    outline: none;
+}
+
+/*Sidebar*/
+#content {
+    display:flex;
+    min-height: 100vh;
+    align-items: stretch;
+}
+.Sidebar{
+    width: 13%;
+    height: 100vh;
+    border-right: 2px solid rgb(44, 43, 43);
+    position: fixed;
+    background-color: rgb(3,3,3);
+    box-sizing: border-box;
+    top: 0; 
+    left: 0;
+    padding-top: 80px; 
+    z-index: 5;
+}
+.Sidebar a{
+    text-decoration: none; 
+    font-weight: bold;
+    color: white;         
+    display: flex;         
+    align-items: center; 
+    padding: 15px 30px; 
+    font-family: sans-serif;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.Sidebar a img {
+    width: 30px; 
+    height: auto;
+    margin-right: 20px; 
+}
+
+.Sidebar a:hover {
+    background-color: rgb(44, 43, 43);
+}
+
+/*Home stuff*/
+.Homemusicgenrerow{
+    width: 90%;
+    height: 40px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.Homemusicgenre{
+    width: auto;
+    min-width: 60px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 13px;
+    border: 2px solid #3A3540;
+    background-color:#3A3540;
+    border-radius: 10px;
+}
+.Homemusicgenrerow a{
+    text-decoration: none;
+}
+.Contentbox{
+    width: 87%;
+    min-height: 100vh;
+    margin-top: 80px;
+    margin-left: 13%;
+    background-color: rgb(3, 3, 3);
+    position: relative; 
+    overflow-x: hidden;
+}
+.Homeintro{
+    width: 90%;
+    color: white;
+    font-family: sans-serif;
+    font-size: 50px;
+    margin: 40px auto auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Contentrow{
+    width: 90%;
+    height: 400px;
+    margin: 40px auto 200px auto; 
+    /* border: solid 2px rgb(0, 225, 255);
+    border-color: aqua;
+    background-color: rgb(255, 7, 61);*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+.Imagecontainer{
+    width: 250px; 
+    height: 250px; 
+    overflow: hidden; 
+    display: flex;
+    border-radius: 20px;
+}
+.Imagecontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}
+.Songcard{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 300px;
+}
+.Songcard img{
+    transition: filter 0.3 ease;
+}
+.Songcard img:hover{
+    filter: brightness(50%);
+}
+.Songinfo{
+    margin-top: 12px;
+    width: 100%;
+}
+.Songtitle{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    font-family: sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Artistname{
+    color: rgb(170, 170, 170);
+    font-size: 18px;
+    margin: 5px 0 0 0;
+    font-family: sans-serif;
+}
+
+/*Song Header + player*/
+.Playerlayout{
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    padding: 0;
+}
+.MainPlayer {
+    text-align: left;
+    padding: 40px 50px 20px 50px; 
+    height: auto;   
+}
+#Creed-page .MainPlayer{
+    background-color: rgb(163, 109, 8);
+}
+#Faint-page .MainPlayer{
+    background-color: rgb(85, 64, 45);
+}
+#Allthethings-page .MainPlayer{
+    background-color: rgb(45, 85, 47);
+}
+#Diaryofjane-page .MainPlayer{
+    background-color: rgb(49, 43, 38);
+}
+#Twice-page .MainPlayer{
+    background-color: #B0A8D3;
+}
+.center-art {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    transition: filter 0.3s;
+}
+.featured-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+.featured-info h3 {
+    margin-top: -10px; 
+    margin-bottom: 5px; 
+    font-size: 100px;
+    color: white; 
+    text-align: left;
+}
+.featured-info p {
+    margin-top: -10px; 
+    color: white; 
+    text-align: left; 
+    font-size: 18px;
+}
+audio {
+    width: 600px;
+    filter: invert(100%); 
+    margin-left: 20px;
+}
+/*For the section below the song header */
+.Contentinfobg{
+    flex: 1;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: #222;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+#Creed-page .Contentinfobg{
+    background: linear-gradient(to bottom,  rgba(184, 117, 16, 0.4) 0%,rgba(20, 20, 20, 0.8) 20%, #121212 100%);
+}
+#Faint-page .Contentinfobg{
+    background: linear-gradient(to bottom,  rgb(61, 46, 32) 0%,rgba(20, 20, 20, 0.8) 20%, #121212 100%);
+}
+#Allthethings-page .Contentinfobg{
+    background: linear-gradient(to bottom,  rgb(35, 61, 37) 0%,rgba(20, 20, 20, 0.8) 20%, #121212 100%);
+}
+#Diaryofjane-page .Contentinfobg{
+    background: linear-gradient(to bottom,  rgb(37, 33, 30) 0%,rgba(20, 20, 20, 0.8) 20%, #121212 100%);
+}
+#Twice-page .Contentinfobg{
+    background: linear-gradient(to bottom,  #8780a5 0%,rgba(20, 20, 20, 0.8) 20%, #121212 100%);
+}
+
+.Additionalinfo{
+    margin-left: 20px;
+    color: #9e9e9e;
+    font-size: 20px;
+}
+.Additionalinfo h1{
+    color: white;
+}
+
+/*For the recommended section*/
+.Tracklink{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+.Trackitem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+.Trackitem:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.Trackart{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+.Tracktitle{
+    font-weight: bold;
+    font-size: 15px;
+}
+.Trackartist{
+    color: #b3b3b3;
+    font-size: 14px;
+}
+.Trackleft{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.Trackright{
+    display: flex;
+    gap: 700px;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: bold;
+}
+.Trackdata{
+    display: flex;
+    flex-direction: column;
+}
+/*Library page*/
+.library {
+    padding: 20px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+    justify-content: flex-start; 
+    margin: auto 65px;
+}
+.card {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    width: 160px; 
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.card:hover {
+    background-color: #282828; 
+}
+.image-wrapper img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.circle img {
+    border-radius: 50%;
+}
+.square img {
+    border-radius: 8px;
+}
+.card h3 {
+    color: white;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.card p {
+    font-size: 13.6px;
+    color: #b3b3b3;
+    margin: 0;
+}
+
+/*Explore page*/
+.top-nav {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; 
+  }
+
+  .nav-tab {
+    background-color: #222; 
+    color: #fff;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 8px; 
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 70px;
+    min-width: 400px; 
+    transition: background-color 0.2s ease;
+  }
+
+  .nav-tab:hover {
+    background-color: #333;
+  }
+
+  .nav-tab.active {
+    background-color: #2a2a2a; 
+    border: 1px solid #444; 
+  }
+
