@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders - Velvet Crust Cakes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">Velvet Crust Cakes</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="orders.html" class="active">Orders</a>
+        <a href="designs.html">Designs</a>
+        <a href="pickup.html">Pickup</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Place an Order</h1>
+    <p>Fill out the form below to order your custom cake.</p>
+</div>
+
+<div class="orders-container">
+
+    <div class="order-form-card">
+        <h2>Order Details</h2>
+        <p>Tell us what you want and we'll bake it with love.</p>
+
+        <form id="orderForm" onsubmit="handleOrder(event)">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="Warda" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="dela Cruz" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="+63 912 345 6789" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cake-type">Cake Type</label>
+                <select id="cake-type" required>
+                    <option value="">-- Select a cake --</option>
+                    <option>Classic Velvet Cake</option>
+                    <option>Caramel Crunch Cake</option>
+                    <option>Strawberry Dream</option>
+                    <option>Chocolate Fudge</option>
+                    <option>Custom Design</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="size">Cake Size</label>
+                    <select id="size" required>
+                        <option value="">-- Select size --</option>
+                        <option>6 inches (serves 8)</option>
+                        <option>8 inches (serves 12)</option>
+                        <option>10 inches (serves 20)</option>
+                        <option>12 inches (serves 30)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-date">Pickup Date</label>
+                    <input type="date" id="pickup-date" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message on Cake (optional)</label>
+                <input type="text" id="message" placeholder="e.g. Happy Birthday, Warda!">
+            </div>
+
+            <div class="form-group">
+                <label for="special">Special Instructions</label>
+                <textarea id="special" placeholder="Allergies, design requests, etc."></textarea>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Cake Type</span>
+                    <span id="sum-type">--</span>
+                </div>
+                <div class="summary-row">
+                    <span>Size</span>
+                    <span id="sum-size">--</span>
+                </div>
+                <div class="summary-row">
+                    <span>Pickup Date</span>
+                    <span id="sum-date">--</span>
+                </div>
+                <div class="summary-row">
+                    <span>Total</span>
+                    <span>To be confirmed</span>
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="btn-cream">Submit Order</button>
+
+        </form>
+
+        <div id="success-msg" style="display:none;">
+            <p>Your order has been placed! We will contact you to confirm the details.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 Velvet Crust Cakes. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('cake-type').addEventListener('change', function() {
+        document.getElementById('sum-type').textContent = this.value || '--';
+    });
+
+    document.getElementById('size').addEventListener('change', function() {
+        document.getElementById('sum-size').textContent = this.value || '--';
+    });
+
+    document.getElementById('pickup-date').addEventListener('change', function() {
+        document.getElementById('sum-date').textContent = this.value || '--';
+    });
+
+    function handleOrder(e) {
+        e.preventDefault();
+        document.getElementById('orderForm').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pickup - Velvet Crust Cakes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">Velvet Crust Cakes</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="orders.html">Orders</a>
+        <a href="designs.html">Designs</a>
+        <a href="pickup.html" class="active">Pickup</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Pickup Status</h1>
+    <p>Check if your order is ready for pickup.</p>
+</div>
+
+<div class="pickup-container">
+
+    <div class="pickup-card">
+        <h3>Check Your Order Status</h3>
+
+        <form onsubmit="checkOrder(event)" style="margin-bottom: 10px;">
+            <div class="form-group">
+                <label for="order-id" style="display:block; font-weight:bold; margin-bottom:5px; font-size:13px; color:#3d2b1f;">Order Number or Phone Number</label>
+                <input type="text" id="order-id" placeholder="e.g. VC-20250001 or +63 912 345 6789" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:14px; box-sizing:border-box;">
+            </div>
+            <button type="submit" class="btn-cream" style="margin-top:6px;">Check Status</button>
+        </form>
+
+        <div id="status-result" style="display:none; margin-top:14px; padding:12px; background:#fdf6ee; border:1px solid #e8d0aa; border-radius:6px; font-size:13px; color:#3d2b1f;">
+            Order found! See details below.
+        </div>
+    </div>
+
+    <div class="pickup-card">
+        <h3>Current Orders</h3>
+
+        <div class="pickup-row">
+            <span class="pickup-label">Order #</span>
+            <span class="pickup-label">Customer</span>
+            <span class="pickup-label">Cake</span>
+            <span class="pickup-label">Date</span>
+            <span class="pickup-label">Status</span>
+        </div>
+
+        <div class="pickup-row">
+            <span>VC-20250001</span>
+            <span>Maria Santos</span>
+            <span>Classic Velvet 8"</span>
+            <span>March 20</span>
+            <span class="pickup-badge pickup-ready">Ready</span>
+        </div>
+
+        <div class="pickup-row">
+            <span>VC-20250002</span>
+            <span>Jose Reyes</span>
+            <span>Floral Garden 10"</span>
+            <span>March 21</span>
+            <span class="pickup-badge pickup-pending">Baking</span>
+        </div>
+
+        <div class="pickup-row">
+            <span>VC-20250003</span>
+            <span>Ana Cruz</span>
+            <span>Drip Chocolate 6"</span>
+            <span>March 19</span>
+            <span class="pickup-badge pickup-done">Picked Up</span>
+        </div>
+
+        <div class="pickup-row">
+            <span>VC-20250004</span>
+            <span>Pedro Lim</span>
+            <span>Unicorn Theme 8"</span>
+            <span>March 22</span>
+            <span class="pickup-badge pickup-pending">Pending</span>
+        </div>
+
+        <div class="pickup-row">
+            <span>VC-20250005</span>
+            <span>Rosa Garcia</span>
+            <span>Custom Design 12"</span>
+            <span>March 23</span>
+            <span class="pickup-badge pickup-pending">Baking</span>
+        </div>
+
+    </div>
+
+    <div class="pickup-card">
+        <h3>Pickup Location & Info</h3>
+        <div class="pickup-row">
+            <span class="pickup-label">Address</span>
+            <span>123 Pastry Street, Quezon City</span>
+        </div>
+        <div class="pickup-row">
+            <span class="pickup-label">Store Hours</span>
+            <span>Mon-Fri: 8AM - 6PM, Sat: 9AM - 5PM</span>
+        </div>
+        <div class="pickup-row">
+            <span class="pickup-label">Contact</span>
+            <span>+63 912 345 6789</span>
+        </div>
+        <div class="pickup-row">
+            <span class="pickup-label">Note</span>
+            <span>Please bring your order number when picking up.</span>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 Velvet Crust Cakes. All rights reserved.</p>
+</footer>
+
+<script>
+    function checkOrder(e) {
+        e.preventDefault();
+        var val = document.getElementById('order-id').value;
+        if (val != '') {
+            document.getElementById('status-result').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>

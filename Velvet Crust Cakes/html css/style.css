@@ -1,0 +1,641 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    background-color: #fdf6ee;
+    color: #3d2b1f;
+}
+
+
+/*Navbar stuff */
+nav {
+    background-color: #3d2b1f;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: #f5e6cc;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav-links a {
+    color: #f5e6cc;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+.nav-links a:hover {
+    background-color: #5a3d2b;
+}
+.nav-links a.active {
+    background-color: #c97a7a;
+    color: #3d2b1f;
+    font-weight: 700;
+}
+.nav-links a.login-btn {
+    background-color: #f5e6cc;
+    color: #3d2b1f;
+    font-weight: 700;
+    border-radius: 20px;
+}
+.nav-links a.login-btn:hover {
+    background-color: #e8d0aa;
+}
+
+
+/* Footer things */
+footer {
+    background-color: #3d2b1f;
+    color: #c9a97a;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    margin-top: 60px;
+}
+
+
+/* ── PAGE HEADER ── */
+.page-header {
+    background-color: #5a3d2b;
+    color: #fdf6ee;
+    padding: 32px 40px;
+}
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+.page-header p {
+    font-size: 14px;
+    color: #e8d0aa;
+}
+
+
+/*buttons*/
+.btn-cream {
+    background-color: #f5e6cc;
+    color: #3d2b1f;
+    border: 1px solid #c9a97a;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+.btn-cream:hover {
+    background-color: #e8d0aa;
+}
+.btn-brown {
+    background-color: #3d2b1f;
+    color: #f5e6cc;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+.btn-brown:hover {
+    background-color: #5a3d2b;
+}
+
+
+/*Erm basta titles*/
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #3d2b1f;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.section-subtitle {
+    text-align: center;
+    color: #7a5c44;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+
+/*Home page*/
+.Fullpage {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+}
+.Fullpage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/velvetcakebg.webp) no-repeat center center/cover;
+    filter: blur(5px);
+    z-index: -2;
+}
+
+.Fullpage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(189, 58, 58, 0.4);
+    z-index: -1;
+}
+.Fullpage-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    color: #f5e6cc;
+    margin-bottom: 12px;
+}
+
+.Fullpage-content p {
+    font-size: 18px;
+    color: #e8d0aa;
+    margin-bottom: 28px;
+}
+
+.Fullpage-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+
+/* FEATURED SECTION */
+.featured-section {
+    padding: 60px 40px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.featured-card {
+    background-color: white;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.featured-card-img {
+    width: 100%;
+    height: 160px;
+    background-color: #e8d0aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #7a5c44;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+.featured-card-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.featured-card-body {
+    padding: 16px;
+}
+
+.featured-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #3d2b1f;
+}
+
+.featured-card-body p {
+    font-size: 13px;
+    color: #7a5c44;
+    margin-bottom: 12px;
+}
+
+
+/* SCHEDULE PREVIEW */
+.schedule-preview {
+    background-color: #fdf6ee;
+    padding: 50px 40px;
+    text-align: center;
+    border-top: 1px solid #e8d0aa;
+}
+
+.schedule-box {
+    background-color: white;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0e0c8;
+    font-size: 14px;
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-day {
+    font-weight: bold;
+    color: #3d2b1f;
+}
+
+.schedule-time {
+    color: #7a5c44;
+}
+
+.schedule-status {
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.status-open {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-closed {
+    background-color: #fce4ec;
+    color: #c62828;
+}
+
+
+
+/*LOGIN PAGE */
+.login-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3d2b1f 0%, #7a5c44 40%, #c9a97a 100%);
+    display: flex;
+    flex-direction: column;
+}
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    padding: 44px 40px;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #fdf6ee;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.glass-card .glass-sub {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+.glass-card label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fdf6ee;
+    margin-bottom: 5px;
+}
+.glass-card input {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fdf6ee;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.glass-card input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+.glass-card input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.28);
+}
+.glass-card .btn-cream {
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 25px;
+}
+.glass-card .glass-switch {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+}
+.glass-card .glass-switch a {
+    color: #f5e6cc;
+    font-weight: 700;
+    text-decoration: none;
+}
+.glass-card .glass-switch a:hover {
+    text-decoration: underline;
+}
+
+
+/*ORDERS PAGE */
+.orders-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.order-form-card {
+    background-color: white;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 30px;
+}
+.order-form-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #3d2b1f;
+    margin-bottom: 6px;
+}
+.order-form-card p {
+    font-size: 13px;
+    color: #7a5c44;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 16px;
+}
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3d2b1f;
+    margin-bottom: 5px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: 'Lato', Arial, sans-serif;
+}
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.order-summary {
+    background-color: #fdf6ee;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 16px;
+}
+.order-summary h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3d2b1f;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid #e8d0aa;
+    color: #555;
+}
+.summary-row:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    color: #3d2b1f;
+    font-size: 14px;
+}
+
+
+/* DESIGNS PAGE */
+.designs-container {
+    padding: 50px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.designs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.design-card {
+    background-color: white;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.design-card-img {
+    width: 100%;
+    height: 180px;
+    background-color: #e8d0aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #7a5c44;
+    overflow: hidden;
+}
+.design-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.design-card-body {
+    padding: 16px;
+}
+.design-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #3d2b1f;
+    margin-bottom: 4px;
+}
+.design-card-body p {
+    font-size: 13px;
+    color: #7a5c44;
+    margin-bottom: 10px;
+}
+.design-card-body .price {
+    font-weight: bold;
+    font-size: 15px;
+    color: #3d2b1f;
+    margin-bottom: 12px;
+}
+
+
+/* PICKUP PAGE*/
+.pickup-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.pickup-card {
+    background-color: white;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.pickup-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #3d2b1f;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #e8d0aa;
+    padding-bottom: 8px;
+}
+.pickup-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #f5ede0;
+    color: #444;
+}
+.pickup-row:last-child {
+    border-bottom: none;
+}
+.pickup-label {
+    color: #999;
+    font-size: 13px;
+}
+.pickup-badge {
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.pickup-ready {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+.pickup-pending {
+    background-color: #fff8e1;
+    color: #e65100;
+}
+.pickup-done {
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+}
+
+
+/*SCHEDULE PAGE (Info Display)*/
+.schedule-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.schedule-card {
+    background-color: white;
+    border: 1px solid #e8d0aa;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.schedule-card-header {
+    background-color: #5a3d2b;
+    color: #f5e6cc;
+    padding: 14px 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.schedule-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.schedule-card table th {
+    background-color: #f5ede0;
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 12px;
+    color: #7a5c44;
+    font-weight: bold;
+}
+.schedule-card table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #f5ede0;
+    color: #333;
+}
+.schedule-card table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* SUCCESS MSG */
+#success-msg {
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    color: #035707;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}

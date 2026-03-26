@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Velvet Crust Cakes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<nav>
+    <a href="index.html" class="nav-logo">Velvet Crust Cakes</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="orders.html">Orders</a>
+        <a href="designs.html">Designs</a>
+        <a href="pickup.html">Pickup</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="login.html" class="login-btn active">Login</a>
+    </div>
+</nav>
+
+<div class="login-wrapper">
+    <div class="glass-card">
+
+        <h2>Velvet Crust Cakes</h2>
+        <p class="glass-sub">Sign in to your account</p>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@email.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="btn-cream">Login</button>
+
+        </form>
+
+        <div class="glass-switch">
+            Don't have an account? <a href="register.html">Register here</a>
+        </div>
+
+        <p id="login-error" style="display:none; color:#ffcccc; text-align:center; margin-top:10px; font-size:13px;">
+            Invalid email or password. Please try again.
+        </p>
+
+    </div>
+</div>
+
+<footer>
+    <p>Copyright 2025 Velvet Crust Cakes. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleLogin(e) {
+        e.preventDefault();
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        if (email != '' && password != '') {
+            window.location.href = 'index.html';
+        } else {
+            document.getElementById('login-error').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
