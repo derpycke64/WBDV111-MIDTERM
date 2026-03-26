@@ -1,0 +1,213 @@
+
+body { 
+    font-family: sans-serif;
+    margin: 0; 
+    padding: 0; 
+}
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    color: white;
+    text-decoration: none; 
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #e0e0e0; 
+}
+.login-button {
+    background-color: white;
+    color: black;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.content { 
+    padding: 40px 5%; 
+}
+.gallery { 
+    display: flex; 
+    flex-wrap: wrap; 
+    cursor: pointer;
+}
+.food-item {
+    width: 180px; 
+    height: 220px;
+    background-color: white; 
+    margin: 10px;
+    border: 1px solid #ddd; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    overflow: hidden; 
+    border-radius: 8px;
+}
+.food-item img { 
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+}
+.food-item span { 
+    padding: 10px; 
+    font-weight: bold; 
+}
+#toggle { 
+    display: none; 
+}
+.sidebar {
+    position: fixed; 
+    top: 0; 
+    right: -300px;
+    width: 250px; 
+    height: 100%;
+    background-color: white; 
+    border-left: 2px solid black;
+    padding: 20px; 
+    transition: 0.5s; 
+    z-index: 1000;
+}
+#toggle:checked ~ .sidebar { 
+    right: 0; 
+}
+.close-btn { 
+    font-weight: bold; 
+    cursor: pointer; 
+    color: rgb(103, 179, 59); 
+}
+
+
+.billing-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.billing-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 20px 0;
+}
+
+.billing-table th, .billing-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+.payment-method {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #ccc;
+}
+
+.small-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*Mostly to center the choose your plan*/
+.plans-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    min-height: 80vh; 
+    padding: 20px;
+}
+/*The actual plans boxes*/
+.plans-container {
+    display: flex;
+    gap: 30px; 
+    justify-content: center;
+    margin-top: 20px;
+}
+/*stuff inside the boxes*/
+.plan-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    width: 300px; 
+    padding: 40px 20px; 
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+}
+.plan-card.featured {
+    border-color: #4CAF50;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: scale(1.05); 
+}
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    line-height: 2;
+    color: #555;
+}
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 110px;
+    background: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.price span {
+    font-size: 16px;
+    color: #777;
+}
+
+
+.plan-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.plan-btn:hover {
+    background: #45a049;
+}

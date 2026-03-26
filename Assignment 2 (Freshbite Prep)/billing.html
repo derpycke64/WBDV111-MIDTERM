@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>EatWells - Billing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+
+    <div class="header">
+        <h1>EatWells</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="meals.html">Meals</a>
+            <a href="billing.html">Billing</a>
+            <a href="plans.html">Plans</a>
+        </nav>
+        <label for="toggle" class="login-button">Login</label>
+    </div>
+
+    <div class="sidebar">
+        <label for="toggle" class="close-btn">X</label>
+        <h2>Login</h2>
+        <p>User:</p>
+        <input type="text">
+        <p>Password:</p>
+        <input type="password">
+        <br><br>
+        <button>Submit</button>
+        <hr>
+        <h3>Your Stats</h3>
+        <p>Nutrients: Good</p>
+        <p>Billing: Paid</p>
+        <p>Plan: Pro</p>
+    </div>
+
+    <div class="content">
+        <div class="billing-container">
+            <h2>Your Invoices</h2>
+            <p>View and download your recent payment history.</p>
+            
+            <table class="billing-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Invoice ID</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mar 04, 2026</td>
+                        <td>#FB-9921</td>
+                        <td><span class="status paid">Paid</span></td>
+                        <td>$59.99</td>
+                    </tr>
+                    <tr>
+                        <td>Feb 25, 2026</td>
+                        <td>#FB-9845</td>
+                        <td><span class="status paid">Paid</span></td>
+                        <td>$59.99</td>
+                    </tr>
+                    <tr>
+                        <td>Feb 18, 2026</td>
+                        <td>#FB-9712</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>$59.99</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="payment-method">
+                <h3>Payment Method</h3>
+                <p>Visa ending in <strong>4242</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
