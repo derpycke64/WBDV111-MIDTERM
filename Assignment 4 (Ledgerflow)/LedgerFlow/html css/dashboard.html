@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - LedgerFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">Ledger<span>Flow</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoices.html">Invoices</a>
+        <a href="clients.html">Clients</a>
+        <a href="pay.html">Pay</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="login.html" class="nav-login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Dashboard</h1>
+    <p>Welcome back! Here's your financial overview.</p>
+</div>
+
+<div class="dashboard-container">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-value">P248,500</div>
+            <div class="stat-change">↑ +12% this month</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Unpaid Invoices</div>
+            <div class="stat-value">P34,200</div>
+            <div class="stat-change negative">↑ 5 overdue</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Clients</div>
+            <div class="stat-value">42</div>
+            <div class="stat-change">↑ +3 new this month</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Payments This Month</div>
+            <div class="stat-value">18</div>
+            <div class="stat-change">↑ +6 vs last month</div>
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <div class="card-title">Recent Invoices</div>
+            <div class="card-sub">Last 5 invoices created</div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Client</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#INV-0051</td>
+                        <td>Reyes Construction</td>
+                        <td>P12,500</td>
+                        <td>March 25</td>
+                        <td><span class="badge badge-yellow">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>#INV-0050</td>
+                        <td>Cruz & Associates</td>
+                        <td>P8,000</td>
+                        <td>March 20</td>
+                        <td><span class="badge badge-green">Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>#INV-0049</td>
+                        <td>Lim Trading Co.</td>
+                        <td>P22,000</td>
+                        <td>March 15</td>
+                        <td><span class="badge badge-red">Overdue</span></td>
+                    </tr>
+                    <tr>
+                        <td>#INV-0048</td>
+                        <td>Santos Retail</td>
+                        <td>P5,500</td>
+                        <td>March 18</td>
+                        <td><span class="badge badge-green">Paid</span></td>
+                    </tr>
+                    <tr>
+                        <td>#INV-0047</td>
+                        <td>Garcia Exports</td>
+                        <td>P18,000</td>
+                        <td>March 30</td>
+                        <td><span class="badge badge-blue">Sent</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+
+            <div class="card">
+                <div class="card-title">Quick Actions</div>
+                <div style="display:flex; flex-direction:column; gap:8px; margin-top:12px;">
+                    <a href="invoices.html" class="btn-primary" style="text-align:center;">+ New Invoice</a>
+                    <a href="clients.html" class="btn-secondary" style="text-align:center;">+ Add Client</a>
+                    <a href="pay.html" class="btn-secondary" style="text-align:center;">Record Payment</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Invoice Status</div>
+                <div class="card-sub">This month</div>
+                <div style="margin-top:8px;">
+                    <div style="display:flex; justify-content:space-between; font-size:13px; padding:7px 0; border-bottom:1px solid #f0f2f5;">
+                        <span><span class="badge badge-green" style="margin-right:6px;">●</span> Paid</span>
+                        <span style="font-weight:600;">12</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:13px; padding:7px 0; border-bottom:1px solid #f0f2f5;">
+                        <span><span class="badge badge-yellow" style="margin-right:6px;">●</span> Pending</span>
+                        <span style="font-weight:600;">5</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:13px; padding:7px 0; border-bottom:1px solid #f0f2f5;">
+                        <span><span class="badge badge-red" style="margin-right:6px;">●</span> Overdue</span>
+                        <span style="font-weight:600;">3</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:13px; padding:7px 0;">
+                        <span><span class="badge badge-blue" style="margin-right:6px;">●</span> Sent</span>
+                        <span style="font-weight:600;">2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 LedgerFlow. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

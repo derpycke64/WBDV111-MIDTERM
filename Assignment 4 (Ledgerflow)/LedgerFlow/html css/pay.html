@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay - LedgerFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">Ledger<span>Flow</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoices.html">Invoices</a>
+        <a href="clients.html">Clients</a>
+        <a href="pay.html" class="active">Pay</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html" class="nav-login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Record a Payment</h1>
+    <p>Log payments received from your clients.</p>
+</div>
+
+<div class="pay-container">
+
+    <div class="pay-summary">
+        <h3>Outstanding Balance</h3>
+        <div class="pay-row"><span>Pending Invoices</span><span>P12,500</span></div>
+        <div class="pay-row"><span>Overdue Invoices</span><span>P22,000</span></div>
+        <div class="pay-row"><span>Total Outstanding</span><span>P34,500</span></div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Payment Details</div>
+        <div class="card-sub">Fill in the payment information below.</div>
+
+        <form id="payForm" onsubmit="handlePayment(event)">
+
+            <div class="form-group">
+                <label for="pay-invoice">Invoice Number</label>
+                <select id="pay-invoice" required>
+                    <option value="">-- Select invoice --</option>
+                    <option>#INV-0051 — Reyes Construction — P12,500</option>
+                    <option>#INV-0049 — Lim Trading Co. — P22,000</option>
+                    <option>#INV-0047 — Garcia Exports — P18,000</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pay-amount">Amount Paid (PHP)</label>
+                    <input type="number" id="pay-amount" placeholder="0.00" required>
+                </div>
+                <div class="form-group">
+                    <label for="pay-date">Payment Date</label>
+                    <input type="date" id="pay-date" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pay-method">Payment Method</label>
+                <select id="pay-method" required>
+                    <option value="">-- Select method --</option>
+                    <option>Bank Transfer</option>
+                    <option>GCash</option>
+                    <option>Maya</option>
+                    <option>Cash</option>
+                    <option>Check</option>
+                    <option>Credit Card</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ref-number">Reference Number (optional)</label>
+                <input type="text" id="ref-number" placeholder="e.g. BDO-20250320-001">
+                <small>Bank transaction ID, GCash reference, or check number.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="pay-notes">Notes</label>
+                <textarea id="pay-notes" placeholder="Additional notes about this payment..."></textarea>
+            </div>
+
+            <div class="security-badge">
+                🔒 This transaction is recorded securely and cannot be undone. Double-check all details before submitting.
+            </div>
+
+            <div style="display:flex; gap:12px;">
+                <button type="submit" class="btn-primary" style="flex:1; padding:12px;">Confirm Payment</button>
+                <a href="invoices.html" class="btn-secondary" style="flex:1; padding:12px; text-align:center;">Cancel</a>
+            </div>
+
+        </form>
+
+        <div id="success-msg" style="display:none;">
+            <p>Payment recorded successfully! The invoice has been marked as paid.</p>
+        </div>
+
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+        <div class="card-title">Recent Payments</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Invoice #</th>
+                    <th>Client</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#INV-0050</td>
+                    <td>Cruz & Associates</td>
+                    <td>P8,000</td>
+                    <td>Bank Transfer</td>
+                    <td>Mar 19, 2025</td>
+                    <td><span class="badge badge-green">Recorded</span></td>
+                </tr>
+                <tr>
+                    <td>#INV-0048</td>
+                    <td>Santos Retail</td>
+                    <td>P5,500</td>
+                    <td>GCash</td>
+                    <td>Mar 17, 2025</td>
+                    <td><span class="badge badge-green">Recorded</span></td>
+                </tr>
+                <tr>
+                    <td>#INV-0045</td>
+                    <td>Garcia Exports</td>
+                    <td>P14,000</td>
+                    <td>Check</td>
+                    <td>Mar 10, 2025</td>
+                    <td><span class="badge badge-green">Recorded</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 LedgerFlow. All rights reserved.</p>
+</footer>
+
+<script>
+    function handlePayment(e) {
+        e.preventDefault();
+        document.getElementById('payForm').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

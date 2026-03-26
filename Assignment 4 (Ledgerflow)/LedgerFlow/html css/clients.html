@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clients - LedgerFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">Ledger<span>Flow</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoices.html">Invoices</a>
+        <a href="clients.html" class="active">Clients</a>
+        <a href="pay.html">Pay</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html" class="nav-login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Clients</h1>
+    <p>Manage your client list and their billing info.</p>
+</div>
+
+<div class="clients-container">
+
+    <div class="card" style="margin-bottom:24px;">
+        <div class="card-title">Add New Client</div>
+        <div class="card-sub">Fill in the details to add a client to your list.</div>
+
+        <form id="clientForm" onsubmit="handleClient(event)">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cname">Client / Company Name</label>
+                    <input type="text" id="cname" placeholder="Reyes Construction" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Person</label>
+                    <input type="text" id="contact" placeholder="Maria Reyes">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cemail">Email Address</label>
+                    <input type="email" id="cemail" placeholder="client@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="cphone">Phone Number</label>
+                    <input type="text" id="cphone" placeholder="+63 912 345 6789">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="caddress">Address</label>
+                <input type="text" id="caddress" placeholder="123 Business St., Quezon City">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ctype">Client Type</label>
+                    <select id="ctype">
+                        <option>Individual</option>
+                        <option>Business</option>
+                        <option>Government</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payment-terms">Payment Terms</label>
+                    <select id="payment-terms">
+                        <option>Net 30</option>
+                        <option>Net 15</option>
+                        <option>Due on Receipt</option>
+                        <option>Net 60</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Add Client</button>
+
+        </form>
+
+        <div id="client-success" style="display:none; color:#065f46; background:#d1fae5; border:1px solid #6ee7b7; padding:12px; border-radius:6px; margin-top:12px; font-weight:600;">
+            Client added successfully!
+        </div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h2 style="font-size:16px; font-weight:700; color:#1a1a2e;">All Clients (5)</h2>
+        <input type="text" class="search-input" placeholder="Search clients...">
+    </div>
+
+    <div class="client-card">
+        <div class="client-avatar">RC</div>
+        <div class="client-info">
+            <div class="client-name">Reyes Construction</div>
+            <div class="client-email">billing@reyes.com · +63 912 100 0001</div>
+        </div>
+        <div class="client-meta">
+            <span class="badge badge-yellow">1 Pending</span><br>
+            <span style="font-size:11px; margin-top:4px; display:block;">Net 30</span>
+        </div>
+    </div>
+
+    <div class="client-card">
+        <div class="client-avatar">CA</div>
+        <div class="client-info">
+            <div class="client-name">Cruz & Associates</div>
+            <div class="client-email">accounts@cruzlaw.com · +63 912 100 0002</div>
+        </div>
+        <div class="client-meta">
+            <span class="badge badge-green">All Paid</span><br>
+            <span style="font-size:11px; margin-top:4px; display:block;">Net 15</span>
+        </div>
+    </div>
+
+    <div class="client-card">
+        <div class="client-avatar">LT</div>
+        <div class="client-info">
+            <div class="client-name">Lim Trading Co.</div>
+            <div class="client-email">finance@limtrading.com · +63 912 100 0003</div>
+        </div>
+        <div class="client-meta">
+            <span class="badge badge-red">1 Overdue</span><br>
+            <span style="font-size:11px; margin-top:4px; display:block;">Net 30</span>
+        </div>
+    </div>
+
+    <div class="client-card">
+        <div class="client-avatar">SR</div>
+        <div class="client-info">
+            <div class="client-name">Santos Retail</div>
+            <div class="client-email">santos@retail.ph · +63 912 100 0004</div>
+        </div>
+        <div class="client-meta">
+            <span class="badge badge-green">All Paid</span><br>
+            <span style="font-size:11px; margin-top:4px; display:block;">Due on Receipt</span>
+        </div>
+    </div>
+
+    <div class="client-card">
+        <div class="client-avatar">GE</div>
+        <div class="client-info">
+            <div class="client-name">Garcia Exports</div>
+            <div class="client-email">exports@garcia.ph · +63 912 100 0005</div>
+        </div>
+        <div class="client-meta">
+            <span class="badge badge-blue">1 Sent</span><br>
+            <span style="font-size:11px; margin-top:4px; display:block;">Net 60</span>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 LedgerFlow. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleClient(e) {
+        e.preventDefault();
+        document.getElementById('client-success').style.display = 'block';
+        document.getElementById('clientForm').reset();
+        setTimeout(function() {
+            document.getElementById('client-success').style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

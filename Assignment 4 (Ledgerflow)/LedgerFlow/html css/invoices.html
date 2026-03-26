@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoices - LedgerFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">Ledger<span>Flow</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoices.html" class="active">Invoices</a>
+        <a href="clients.html">Clients</a>
+        <a href="pay.html">Pay</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html" class="nav-login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Invoices</h1>
+    <p>Create and manage all your invoices.</p>
+</div>
+
+<div class="invoices-container">
+
+    <div class="card" style="margin-bottom: 24px;">
+        <div class="card-title">Create New Invoice</div>
+        <div class="card-sub">Fill in the details below to generate a new invoice.</div>
+
+        <form id="invoiceForm" onsubmit="handleInvoice(event)">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="client-name">Client Name</label>
+                    <select id="client-name" required>
+                        <option value="">-- Select client --</option>
+                        <option>Reyes Construction</option>
+                        <option>Cruz & Associates</option>
+                        <option>Lim Trading Co.</option>
+                        <option>Santos Retail</option>
+                        <option>Garcia Exports</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inv-date">Invoice Date</label>
+                    <input type="date" id="inv-date" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (PHP)</label>
+                    <input type="number" id="amount" placeholder="0.00" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description / Services</label>
+                <textarea id="description" placeholder="Describe the services or products billed..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="inv-status">Status</label>
+                <select id="inv-status">
+                    <option>Draft</option>
+                    <option>Sent</option>
+                    <option>Pending</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-primary">Create Invoice</button>
+
+        </form>
+
+        <div id="inv-success" style="display:none; color:#065f46; background:#d1fae5; border:1px solid #6ee7b7; padding:12px; border-radius:6px; margin-top:12px; font-weight:600;">
+            Invoice created successfully!
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="table-toolbar">
+            <h2>All Invoices</h2>
+            <input type="text" class="search-input" placeholder="Search invoices...">
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Invoice #</th>
+                    <th>Client</th>
+                    <th>Amount</th>
+                    <th>Invoice Date</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#INV-0051</td>
+                    <td>Reyes Construction</td>
+                    <td>P12,500</td>
+                    <td>Mar 10, 2025</td>
+                    <td>Mar 25, 2025</td>
+                    <td><span class="badge badge-yellow">Pending</span></td>
+                    <td><a href="pay.html" style="color:#2563eb; font-size:12px; font-weight:600;">Pay</a></td>
+                </tr>
+                <tr>
+                    <td>#INV-0050</td>
+                    <td>Cruz & Associates</td>
+                    <td>P8,000</td>
+                    <td>Mar 5, 2025</td>
+                    <td>Mar 20, 2025</td>
+                    <td><span class="badge badge-green">Paid</span></td>
+                    <td><span style="color:#9ca3af; font-size:12px;">Done</span></td>
+                </tr>
+                <tr>
+                    <td>#INV-0049</td>
+                    <td>Lim Trading Co.</td>
+                    <td>P22,000</td>
+                    <td>Feb 28, 2025</td>
+                    <td>Mar 15, 2025</td>
+                    <td><span class="badge badge-red">Overdue</span></td>
+                    <td><a href="pay.html" style="color:#dc2626; font-size:12px; font-weight:600;">Pay Now</a></td>
+                </tr>
+                <tr>
+                    <td>#INV-0048</td>
+                    <td>Santos Retail</td>
+                    <td>P5,500</td>
+                    <td>Mar 3, 2025</td>
+                    <td>Mar 18, 2025</td>
+                    <td><span class="badge badge-green">Paid</span></td>
+                    <td><span style="color:#9ca3af; font-size:12px;">Done</span></td>
+                </tr>
+                <tr>
+                    <td>#INV-0047</td>
+                    <td>Garcia Exports</td>
+                    <td>P18,000</td>
+                    <td>Mar 15, 2025</td>
+                    <td>Mar 30, 2025</td>
+                    <td><span class="badge badge-blue">Sent</span></td>
+                    <td><a href="pay.html" style="color:#2563eb; font-size:12px; font-weight:600;">Pay</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 LedgerFlow. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleInvoice(e) {
+        e.preventDefault();
+        document.getElementById('inv-success').style.display = 'block';
+        document.getElementById('invoiceForm').reset();
+        setTimeout(function() {
+            document.getElementById('inv-success').style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

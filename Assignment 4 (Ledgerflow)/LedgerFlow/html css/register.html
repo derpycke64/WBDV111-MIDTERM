@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - LedgerFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<nav>
+    <a href="index.html" class="nav-logo">Ledger<span>Flow</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoices.html">Invoices</a>
+        <a href="clients.html">Clients</a>
+        <a href="pay.html">Pay</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html" class="nav-login-btn">Login</a>
+    </div>
+</nav>
+
+<div class="register-wrapper">
+    <div class="register-card">
+
+        <h2>Create Account</h2>
+        <p class="reg-sub">Set up your LedgerFlow finance account</p>
+
+        <form id="regForm" onsubmit="handleRegister(event)">
+
+            <div class="section-heading">Personal Information</div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="Juan" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="dela Cruz" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@company.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number (for 2FA)</label>
+                <input type="text" id="phone" placeholder="+63 912 345 6789" required>
+                <small>This number will receive your two-factor authentication codes.</small>
+            </div>
+
+            <div class="section-heading" style="margin-top:20px;">Company Information</div>
+
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" placeholder="Dela Cruz Enterprises" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="role">Your Role</label>
+                    <select id="role" required>
+                        <option value="">-- Select --</option>
+                        <option>Owner</option>
+                        <option>Accountant</option>
+                        <option>Finance Manager</option>
+                        <option>Staff</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry">
+                        <option value="">-- Select --</option>
+                        <option>Retail</option>
+                        <option>Services</option>
+                        <option>Manufacturing</option>
+                        <option>Technology</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-heading" style="margin-top:20px;">Create Password</div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Min. 8 characters" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" id="confirm" placeholder="Re-enter password" required>
+                </div>
+            </div>
+
+            <div class="security-note" style="margin-bottom:20px;">
+                🔒 Your account will be protected by Two-Factor Authentication (2FA). A verification code will be sent to your phone when you log in.
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; padding:12px;">Create Account</button>
+
+        </form>
+
+        <p id="success-msg" style="display:none; color:#065f46; background:#d1fae5; border:1px solid #6ee7b7; padding:14px; border-radius:8px; text-align:center; font-weight:600; margin-top:10px;">
+            Account created! <a href="login.html" style="color:#2563eb;">Click here to login.</a>
+        </p>
+
+        <div class="login-switch">
+            Already have an account? <a href="login.html">Sign in</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>Copyright 2025 LedgerFlow. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleRegister(e) {
+        e.preventDefault();
+        var pw = document.getElementById('password').value;
+        var cpw = document.getElementById('confirm').value;
+
+        if (pw != cpw) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        document.getElementById('regForm').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - LedgerFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<nav>
+    <a href="index.html" class="nav-logo">Ledger<span>Flow</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoices.html">Invoices</a>
+        <a href="clients.html">Clients</a>
+        <a href="pay.html">Pay</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html" class="nav-login-btn active">Login</a>
+    </div>
+</nav>
+
+<div class="login-wrapper">
+    <div class="login-card">
+
+        <div id="step1">
+            <div class="login-icon">🔐</div>
+            <h2>Sign In</h2>
+            <p class="login-sub">LedgerFlow Finance Portal</p>
+
+            <div class="security-note">
+                🛡️ This is a secure, encrypted connection. Do not share your credentials with anyone.
+            </div>
+
+            <form id="loginForm" onsubmit="goToStep2(event)">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <small>Minimum 8 characters. Case sensitive.</small>
+                </div>
+
+                <button type="submit">Continue →</button>
+
+            </form>
+
+            <div class="login-switch">
+                Don't have an account? <a href="register.html">Create account</a>
+            </div>
+        </div>
+
+        <div id="step2" class="twofa-section">
+            <div class="login-icon">📱</div>
+            <h2>Two-Factor Auth</h2>
+            <p class="login-sub">Enter the 6-digit code sent to your phone</p>
+
+            <div class="security-note">
+                🔒 This step protects your account from unauthorized access.
+            </div>
+
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" id="d1" onkeyup="moveNext(this, 'd2')">
+                <input type="text" maxlength="1" id="d2" onkeyup="moveNext(this, 'd3')">
+                <input type="text" maxlength="1" id="d3" onkeyup="moveNext(this, 'd4')">
+                <input type="text" maxlength="1" id="d4" onkeyup="moveNext(this, 'd5')">
+                <input type="text" maxlength="1" id="d5" onkeyup="moveNext(this, 'd6')">
+                <input type="text" maxlength="1" id="d6">
+            </div>
+            <p class="otp-hint">Code expires in 5 minutes. <a href="#" style="color:#2563eb;">Resend code</a></p>
+
+            <button onclick="verifyOTP()">Verify &amp; Sign In</button>
+
+            <div class="login-switch" style="margin-top:12px;">
+                <a href="#" onclick="backToStep1()" style="color:#6b7280; text-decoration:none;">← Back to login</a>
+            </div>
+
+            <div id="otp-error" style="display:none; color:#dc2626; text-align:center; font-size:13px; margin-top:10px;">
+                Invalid code. Please try again.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>Copyright 2025 LedgerFlow. All rights reserved.</p>
+</footer>
+
+<script>
+    function goToStep2(e) {
+        e.preventDefault();
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('d1').focus();
+    }
+
+    function backToStep1() {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+    }
+
+    function moveNext(current, nextId) {
+        if (current.value.length == 1) {
+            var next = document.getElementById(nextId);
+            if (next) next.focus();
+        }
+    }
+
+    function verifyOTP() {
+        var code = '';
+        ['d1','d2','d3','d4','d5','d6'].forEach(function(id) {
+            code += document.getElementById(id).value;
+        });
+
+        if (code.length == 6) {
+            window.location.href = 'dashboard.html';
+        } else {
+            document.getElementById('otp-error').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
