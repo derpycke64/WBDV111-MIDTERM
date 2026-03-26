@@ -14,7 +14,7 @@ body.about-page {
     height: 100vh;
     min-height: 100vh;
     overflow: visible;
-    background: url('/images/resort.webp') center/cover no-repeat;
+    background: url('../images/resort.webp') center/cover no-repeat;
 }
 body.about-page .full-section {
     height: auto;
@@ -303,7 +303,7 @@ nav {
     right: -80px;
     width: 400px;
     height: 400px;
-    background: url('/images/leaf.png') no-repeat center/contain;
+    background: url('../images/leaf.png') no-repeat center/contain;
     opacity: 0.85;
     pointer-events: none;
 }
@@ -313,7 +313,7 @@ nav {
     left: -80px;
     width: 400px;
     height: 400px;
-    background: url('/images/flower.webp') no-repeat center/contain;
+    background: url('../images/flower.webp') no-repeat center/contain;
     opacity: 0.75;
     pointer-events: none;
 }
