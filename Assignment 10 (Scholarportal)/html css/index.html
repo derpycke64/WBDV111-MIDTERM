@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ScholarPortal - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo">Scholar<span>Portal</span></div>
+    <div class="nav-links">
+        <a href="courses.html">Courses</a>
+        <a href="register.html">Register</a>
+        <a href="profile.html">Profile</a>
+    </div>
+</nav>
+
+<div class="login-container">
+    <div class="login-box">
+
+        <div class="login-header">
+            <h1>ScholarPortal</h1>
+            <p>Student Academic Portal</p>
+        </div>
+
+        <form onsubmit="handleLogin(event)">
+
+            <label for="studentId">Student ID</label>
+            <input type="text" id="studentId" placeholder="e.g. 2024-00123" required>
+            <small>Enter your Student ID number, not your email.</small>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p class="register-link">Don't have an account? <a href="register.html">Register here</a></p>
+
+        <p id="error-msg" style="display:none; color:red; text-align:center;">
+            Invalid Student ID or password.
+        </p>
+
+    </div>
+</div>
+
+<footer>
+    <p>Copyright 2025 Westley. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleLogin(e) {
+        e.preventDefault();
+        var sid = document.getElementById('studentId').value;
+        var pw = document.getElementById('password').value;
+
+        if (sid != '' && pw != '') {
+            window.location.href = 'courses.html';
+        } else {
+            document.getElementById('error-msg').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>

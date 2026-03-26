@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - ScholarPortal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo">Scholar<span>Portal</span></div>
+    <div class="nav-links">
+        <a href="courses.html">Courses</a>
+        <a href="register.html">Register</a>
+        <a href="profile.html" class="active">Profile</a>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Student Profile</h1>
+    <p>View and manage your personal information</p>
+</div>
+
+<div class="profile-container">
+
+    <div class="profile-left">
+        <div class="avatar-box">
+            <div class="avatar">JD</div>
+            <h2>Warda dela Cruz</h2>
+            <p class="student-id-tag">ID: 2024-00123</p>
+            <p class="course-tag">BSIT 1-A</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-row">
+                <span class="info-label">Status</span>
+                <span class="badge enrolled">Enrolled</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Year Level</span>
+                <span>1st Year</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Semester</span>
+                <span>1st Sem 2024-2025</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">GWA</span>
+                <span>1.55</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="profile-right">
+
+        <div class="profile-section">
+            <h3>Personal Information</h3>
+            <hr>
+            <div class="detail-row">
+                <span class="detail-label">Full Name</span>
+                <span>Warda dela Cruz</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Student ID</span>
+                <span>2025-00123</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Date of Birth</span>
+                <span>January 15, 2007</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Phone Number</span>
+                <span>+63 912 345 6789</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Email Address</span>
+                <span>juandelacruz@school.edu.ph</span>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h3>Academic Information</h3>
+            <hr>
+            <div class="detail-row">
+                <span class="detail-label">Program</span>
+                <span>BS Information Technology</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Section</span>
+                <span>BSIT 1-A</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">College</span>
+                <span>College of Computer Studies</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Units Enrolled</span>
+                <span>17 units</span>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h3>Transcript Summary</h3>
+            <hr>
+            <p style="font-size: 13px; color: #666; margin-bottom: 14px;">
+                Below is a summary of your academic transcript. For the official copy, please visit the Registrar's Office.
+            </p>
+            <table class="transcript-table">
+                <thead>
+                    <tr>
+                        <th>Semester</th>
+                        <th>Units</th>
+                        <th>GWA</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st Sem 2024-2025</td>
+                        <td>17</td>
+                        <td>1.55</td>
+                        <td><span class="badge enrolled">In Progress</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size:12px;color:#888;margin-top:10px;">* Transcript data is updated every end of semester.</p>
+        </div>
+
+        <div class="edit-section">
+            <h3>Update Information</h3>
+            <hr>
+            <form onsubmit="saveChanges(event)">
+                <label for="new-phone">Phone Number</label>
+                <input type="text" id="new-phone" placeholder="+63 912 345 6789">
+
+                <label for="new-email">Email Address</label>
+                <input type="email" id="new-email" placeholder="your@email.com">
+
+                <button type="submit">Save Changes</button>
+            </form>
+            <p id="save-msg" style="display:none; color:green; font-weight:bold; margin-top:10px;">
+                Changes saved successfully!
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>Copyright 2025 Westley. All rights reserved.</p>
+</footer>
+
+<script>
+    function saveChanges(e) {
+        e.preventDefault();
+        document.getElementById('save-msg').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
