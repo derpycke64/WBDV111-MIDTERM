@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LibraryConnect — Staff Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" style="background: #1e1209;">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <span class="navbar__logo-main">Staff Portal</span>
+                <span class="navbar__logo-sub">Valenzuela City Collection</span>
+            </div>
+            <div class="navbar__links">
+                <a href="index.html">View Site</a>
+                <a href="index.html" style="color: #c8a97e;">Logout</a>
+                <a href="overdue.html" class="navbar__overdue-btn">⚠ Overdue</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="section-title">Database Management</h2>
+        <p style="font-family: 'Courier New', monospace; font-size: 12px; margin-bottom: 20px;">
+            Welcome, Administrator. You are editing the live database.
+        </p>
+        <hr class="section-rule">
+        <div style="margin-bottom: 30px;">
+            <button class="stamp stamp--green" style="cursor: pointer; padding: 10px 20px;">+ Add New Book</button>
+            <button class="stamp" style="cursor: pointer; padding: 10px 20px; color: #1a3a5c;">+ Register Member</button>
+        </div>
+        <h3 class="section-title" style="font-size: 18px;">Catalogue Management</h3>
+        <table class="library-table" style="margin-bottom: 40px;">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B-1001</td>
+                    <td>The Shadow of the Wind</td>
+                    <td>Carlos Ruiz Zafón</td>
+                    <td><span class="stamp stamp--green">Available</span></td>
+                    <td><a href="#">Edit</a> | <a href="#" style="color: red;">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>B-1002</td>
+                    <td>Sapiens</td>
+                    <td>Yuval Noah Harari</td>
+                    <td><span class="stamp stamp--red">On Loan</span></td>
+                    <td><a href="#">Edit</a> | <a href="#" style="color: red;">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="section-title" style="font-size: 18px;">Member Records</h3>
+        <table class="library-table">
+            <thead>
+                <tr>
+                    <th>Card ID</th>
+                    <th>Name</th>
+                    <th>Loans</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LC-001204</td>
+                    <td>Maria Santos</td>
+                    <td>12</td>
+                    <td>Active</td>
+                    <td><a href="#">View Profile</a> | <a href="#" style="color: red;">Suspend</a></td>
+                </tr>
+                <tr>
+                    <td>LC-001388</td>
+                    <td>Jose Reyes</td>
+                    <td>3</td>
+                    <td style="color: red;">Suspended</td>
+                    <td><a href="#">View Profile</a> | <a href="#" style="color: #2d5a27;">Reactivate</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p style="font-size: 11px; font-family: 'Courier New', monospace;">
+                Secure Session · LibraryConnect Admin v1.0
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

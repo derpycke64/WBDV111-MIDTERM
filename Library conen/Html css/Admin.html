@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LibraryConnect — Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <span class="navbar__logo-main">LibraryConnect</span>
+            </div>
+            <div class="navbar__links">
+                <a href="index.html">← Back to Site</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="admin-login-box">
+            <h2 class="section-title">Staff Login</h2>
+            <hr class="section-rule">
+            <p>Please enter your credentials to access the management system.</p>
+            <br>
+            <label>Username</label>
+            <input type="text" id="user" placeholder="Enter username...">
+            <label>Password</label>
+            <input type="password" id="pass" placeholder="Enter password...">
+            <button class="navbar__overdue-btn" onclick="checkLogin()" style="width: 100%; margin: 20px 0; cursor: pointer;">
+                ACCESS SYSTEM
+            </button>
+            <p id="error" style="color: #b22222; font-size: 12px; display: none;">Invalid Username or Password.</p>
+        </div>
+    </div>
+    <script>
+        function checkLogin() {
+            var u = document.getElementById('user').value;
+            var p = document.getElementById('pass').value;
+            if (u === "admin" && p === "password123") {
+                window.location.href = "admin-dashboard.html";
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

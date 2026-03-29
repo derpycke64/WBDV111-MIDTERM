@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LibraryConnect — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <span class="navbar__logo-main">LibraryConnect</span>
+                <span class="navbar__logo-sub">Est. 1952 · Valenzuela City</span>
+            </div>
+
+            <div class="navbar__links">
+                <a href="index.html" class="active">Home</a>
+                <a href="members.html">Members</a>
+                <a href="loans.html">Loans</a>
+                <a href="overdue.html" class="navbar__overdue-btn">⚠ Overdue</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search books, authors...">
+                <button>⌕</button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <h1 class="hero__title">Every Book Tells a Story.</h1>
+        <div class="hero-btns">
+            <a href="#" class="btn-black">SEARCH CATALOGUE</a>
+            <a href="members.html" class="btn-white">VIEW MEMBERS</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Library at a Glance</h2>
+        <hr class="section-rule">
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-card__number">14,820</div>
+                <div class="stat-card__label">Total Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">1,240</div>
+                <div class="stat-card__label">Active Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number">386</div>
+                <div class="stat-card__label">Active Loans</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__number stat-card__number--overdue">42</div>
+                <div class="stat-card__label">Overdue Books</div>
+            </div>
+        </div>
+        <div id="search-results-section" style="display: none; margin-bottom: 40px;">
+            <h2 class="section-title">Search Results</h2>
+            <div class="members-grid" id="search-results-grid"></div>
+        </div>
+        <h2 class="section-title">Recent Acquisitions</h2>
+        <hr class="section-rule">
+        <div class="members-grid">
+            <div class="card">
+                <div class="card__header">The Shadow of the Wind</div>
+                <div class="card__meta">Carlos Ruiz Zafón · Fiction · 2001</div>
+                <div class="card__body">A young boy discovers a forgotten book that will change his life — and unravel a dark secret.</div>
+                <br>
+                <span class="stamp stamp--green">Available</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Sapiens: A Brief History</div>
+                <div class="card__meta">Yuval Noah Harari · Non-fiction · 2011</div>
+                <div class="card__body">From the Stone Age to the present day — the sweeping story of humankind.</div>
+                <br>
+                <span class="stamp stamp--red">On Loan</span>
+            </div>
+            <div class="card">
+                <div class="card__header">The Alchemist</div>
+                <div class="card__meta">Paulo Coelho · Fiction · 1988</div>
+                <div class="card__body">A shepherd boy's journey from Spain to Egypt and his search for treasure.</div>
+                <br>
+                <span class="stamp stamp--green">Available</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Dune</div>
+                <div class="card__meta">Frank Herbert · Sci-Fi · 1965</div>
+                <div class="card__body">Epic science fiction set on the desert planet Arrakis — a tale of politics and survival.</div>
+                <br>
+                <span class="stamp" style="color: #1a3a5c; border: 2px solid #1a3a5c;">Reserved</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>© 2026 LibraryConnect · Valenzuela City Collection </p>
+                    <p style="font-size: 11px; opacity: 0.7;">Serving the community since 1952. Copyright by Westley</p>
+                </div>
+                <div class="footer-right">
+                    <a href="Admin.html" class="admin-link">Staff Login</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

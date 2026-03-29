@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LibraryConnect — Members</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <span class="navbar__logo-main">LibraryConnect</span>
+                <span class="navbar__logo-sub">Est. 1952 · Valenzuela City</span>
+            </div>
+
+            <div class="navbar__links">
+                <a href="index.html" class="active">Home</a>
+                <a href="members.html">Members</a>
+                <a href="loans.html">Loans</a>
+                <a href="overdue.html" class="navbar__overdue-btn">⚠ Overdue</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search books, authors...">
+                <button>⌕</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="section-title">Member Directory</h2>
+        <hr class="section-rule">
+        <p style="margin-bottom: 24px; font-size: 14px; color: #5a3e28;">
+            Registered library card holders. Each card is uniquely numbered and tied to an active membership status.
+        </p>
+        <div class="members-grid">
+            <div class="card">
+                <div class="card__header">Maria Santos</div>
+                <div class="card__meta">ID: LC-001204</div>
+                <div class="card__body">Member since Jan 2022. Books borrowed: 12.</div>
+                <br>
+                <span class="stamp stamp--green">Active</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Jose Reyes</div>
+                <div class="card__meta">ID: LC-001388</div>
+                <div class="card__body">Membership paused due to overdue items.</div>
+                <br>
+                <span class="stamp stamp--red">Suspended</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Ana Dela Cruz</div>
+                <div class="card__meta">ID: LC-001512</div>
+                <div class="card__body">Member since Aug 2020. Books borrowed: 28.</div>
+                <br>
+                <span class="stamp stamp--green">Active</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Rodrigo Lim</div>
+                <div class="card__meta">ID: LC-001674</div>
+                <div class="card__body">Member since Nov 2023. Books borrowed: 7.</div>
+                <br>
+                <span class="stamp stamp--green">Active</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Clara Bautista</div>
+                <div class="card__meta">ID: LC-001790</div>
+                <div class="card__body">Member since Feb 2023. Books borrowed: 19.</div>
+                <br>
+                <span class="stamp stamp--green">Active</span>
+            </div>
+            <div class="card">
+                <div class="card__header">Emmanuel Torres</div>
+                <div class="card__meta">ID: LC-001855</div>
+                <div class="card__body">New registration. Verification in progress.</div>
+                <br>
+                <span class="stamp" style="color: #1a3a5c;">Pending</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

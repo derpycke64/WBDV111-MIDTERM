@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LibraryConnect — Active Loans</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <span class="navbar__logo-main">LibraryConnect</span>
+                <span class="navbar__logo-sub">Est. 1952 · Valenzuela City</span>
+            </div>
+
+            <div class="navbar__links">
+                <a href="index.html" class="active">Home</a>
+                <a href="members.html">Members</a>
+                <a href="loans.html">Loans</a>
+                <a href="overdue.html" class="navbar__overdue-btn">⚠ Overdue</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search books, authors...">
+                <button>⌕</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="section-title">Active Loans Registry</h2>
+        <hr class="section-rule">
+        <table class="library-table">
+            <thead>
+                <tr>
+                    <th>Loan ID</th>
+                    <th>Book Title</th>
+                    <th>Member</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LN-8821</td>
+                    <td>Sapiens</td>
+                    <td>Maria Santos</td>
+                    <td>Mar 15, 2026</td>
+                    <td><span class="stamp stamp--red">Overdue</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8815</td>
+                    <td>The Shadow of the Wind</td>
+                    <td>Jose Reyes</td>
+                    <td>Mar 22, 2026</td>
+                    <td><span class="stamp stamp--red">Overdue</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8812</td>
+                    <td>Great Expectations</td>
+                    <td>Jose Reyes</td>
+                    <td>Mar 26, 2026</td>
+                    <td><span class="stamp stamp--red">Overdue</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8901</td>
+                    <td>Dune</td>
+                    <td>Rodrigo Lim</td>
+                    <td>Apr 02, 2026</td>
+                    <td><span class="stamp" style="color: #1a3a5c;">On Loan</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8912</td>
+                    <td>The Alchemist</td>
+                    <td>Clara Bautista</td>
+                    <td>Apr 10, 2026</td>
+                    <td><span class="stamp" style="color: #1a3a5c;">On Loan</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8922</td>
+                    <td>1984</td>
+                    <td>Ana Dela Cruz</td>
+                    <td>Apr 12, 2026</td>
+                    <td><span class="stamp" style="color: #1a3a5c;">On Loan</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8930</td>
+                    <td>Brave New World</td>
+                    <td>Maria Santos</td>
+                    <td>Apr 15, 2026</td>
+                    <td><span class="stamp" style="color: #1a3a5c;">On Loan</span></td>
+                </tr>
+                <tr>
+                    <td>LN-8945</td>
+                    <td>The Little Prince</td>
+                    <td>Rodrigo Lim</td>
+                    <td>Apr 18, 2026</td>
+                    <td><span class="stamp" style="color: #1a3a5c;">On Loan</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

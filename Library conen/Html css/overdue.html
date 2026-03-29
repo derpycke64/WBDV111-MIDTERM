@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LibraryConnect — Overdue Alerts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <span class="navbar__logo-main">LibraryConnect</span>
+                <span class="navbar__logo-sub">Est. 1952 · Valenzuela City</span>
+            </div>
+
+            <div class="navbar__links">
+                <a href="index.html" class="active">Home</a>
+                <a href="members.html">Members</a>
+                <a href="loans.html">Loans</a>
+                <a href="overdue.html" class="navbar__overdue-btn">⚠ Overdue</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search books, authors...">
+                <button>⌕</button>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container">
+    
+    <div class="alert-box">
+      <h2 class="section-title alert-title">⚠ Critical Overdue Alerts</h2>
+      
+      <p class="alert-note">
+        The following items have passed their 14-day return window. Membership privileges for these individuals have been temporarily restricted.
+      </p>
+
+      <table class="library-table">
+        <thead>
+          <tr>
+            <th>Member Name</th>
+            <th>Book Title</th>
+            <th>Days Past Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maria Santos</td>
+            <td>Sapiens</td>
+            <td class="text-danger">15 Days</td>
+          </tr>
+          <tr>
+            <td>Jose Reyes</td>
+            <td>The Shadow of the Wind</td>
+            <td class="text-danger">8 Days</td>
+          </tr>
+          <tr>
+            <td>Jose Reyes</td>
+            <td>Great Expectations</td>
+            <td class="text-danger">4 Days</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-rule" style="margin-top: 25px;"></div>
+      <p class="card__meta">Notice: Automated notices were mailed to the registered addresses on file.</p>
+    </div>
+
+    <a href="loans.html" class="back-link">← Back to Full Loan Registry</a>
+  </div>
+
+</body>
+</html>
