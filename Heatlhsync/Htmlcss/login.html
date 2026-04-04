@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Secure Portal - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="portal-topbar">
+            <div class="portal-logo">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                </div>
+                <div>
+                    <div class="portal-logo-label">SECURE PORTAL</div>
+                    <div class="portal-logo-name">HealthSync Clinic</div>
+                </div>
+            </div>
+            <div class="portal-topbar-links">
+                <a href="index.html">Back to Website</a>
+                <button class="btn-clear-session" onclick="clearSession()">Clear Session</button>
+            </div>
+        </nav>
+        <section class="login-page">
+            <div class="login-wrapper">
+
+                <!-- LEFT: Info + Form -->
+                <div class="login-left">
+                    <div class="login-info-card">
+                        <div class="login-info-top">ROLE-BASED ACCESS</div>
+                        <h1 class="login-heading">Login with your account to open the matching dashboard.</h1>
+                        <p class="login-subtext">Thank you for being part of our family. <strong>Default</strong>, <strong>Admin</strong>, <strong>Staff</strong>, and <strong>User</strong>. Each credential pair routes to its own dashboard file.</p>
+                        <div class="login-info-btns">
+                            <a href="booking.html" class="btn-open-wizard">Open Appointment Wizard</a>
+                            <a href="index.html" class="btn-return-home">Return to Home</a>
+                        </div>
+                        <div class="login-info-stats">
+                            <div class="info-stat">
+                                <div class="info-stat-label">Accounts Ready</div>
+                                <div class="info-stat-val">4</div>
+                            </div>
+                            <div class="info-stat">
+                                <div class="info-stat-label">Separate Dashboard Files</div>
+                                <div class="info-stat-val">Enabled</div>
+                            </div>
+                            <div class="info-stat">
+                                <div class="info-stat-label">Session Handling</div>
+                                <div class="info-stat-val">Local Prototype</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="login-form-card">
+                        <div class="login-form-label">SIGN IN</div>
+                        <h2 class="login-form-heading">Enter a username and password.</h2>
+                        <p class="login-form-sub">Use the credentials below or tap a card to auto-fill the form.</p>
+                        <div class="login-field">
+                            <label>Username</label>
+                            <input type="text" id="username-input" placeholder="Enter username">
+                        </div>
+                        <div class="login-field">
+                            <label>Password</label>
+                            <input type="password" id="password-input" placeholder="Enter password">
+                        </div>
+                        <button class="btn-login" onclick="doLogin()">Login to Dashboard</button>
+                        <div class="login-session-row" id="session-row" style="display:none;">
+                            <span id="session-label">Current session: —</span>
+                            <a href="#" onclick="continueSession()" class="link-continue">Continue Current Session</a>
+                        </div>
+                        <div class="login-error" id="login-error" style="display:none;">Invalid username or password. Please try again.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        var accounts = {
+            'default': { password: 'default123', name: 'Default Operator', role: 'Default', dashboard: 'dashboard-default.html' },
+            'admin':   { password: 'admin123',   name: 'Angela Reed',      role: 'Admin',   dashboard: 'dashboard-admin.html' },
+            'staff':   { password: 'staff123',   name: 'Lena Brooks',      role: 'Staff',   dashboard: 'dashboard-staff.html' },
+            'user':    { password: 'user123',     name: 'Mia Thompson',     role: 'User',    dashboard: 'dashboard-user.html' }
+        };
+
+        function useAccount(role) {
+            document.getElementById('username-input').value = role;
+            document.getElementById('password-input').value = accounts[role].password;
+            document.getElementById('login-error').style.display = 'none';
+        }
+
+        function doLogin() {
+            var username = document.getElementById('username-input').value.trim().toLowerCase();
+            var password = document.getElementById('password-input').value.trim();
+            var error = document.getElementById('login-error');
+            error.style.display = 'none';
+            if (accounts[username] && accounts[username].password === password) {
+                var acc = accounts[username];
+                localStorage.setItem('healthsync_session', JSON.stringify({ username: username, name: acc.name, role: acc.role }));
+                window.location.href = acc.dashboard;
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        function continueSession() {
+            var saved = localStorage.getItem('healthsync_session');
+            if (saved) {
+                var session = JSON.parse(saved);
+                window.location.href = accounts[session.username].dashboard;
+            }
+        }
+
+        function clearSession() {
+            localStorage.removeItem('healthsync_session');
+            document.getElementById('session-row').style.display = 'none';
+            document.getElementById('username-input').value = '';
+            document.getElementById('password-input').value = '';
+        }
+
+        function checkSession() {
+            var saved = localStorage.getItem('healthsync_session');
+            if (saved) {
+                var session = JSON.parse(saved);
+                document.getElementById('session-row').style.display = 'flex';
+                document.getElementById('session-label').innerText = 'Current session: ' + session.name + ' (' + session.role + ')';
+            }
+        }
+
+        checkSession();
+    </script>
+</html>

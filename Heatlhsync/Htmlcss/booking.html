@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Booking - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="header">EMERGENCY? Call 8700 or chat with us.</nav>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                <a href="index.html"><span>Healthsync Clinic</span></a>
+            </div>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="login.html">Login</a>
+                <a href="booking.html" class="booking-btn">Booking</a>
+            </div>
+        </nav>
+
+        <section class="booking-page">
+            <div class="booking-wrapper">
+
+                <!-- LEFT: Wizard -->
+                <div class="wizard-box">
+                    <div class="wizard-top">
+                        <div class="step-label" id="step-label">Step 1 of 4</div>
+                        <div class="step-desc" id="step-desc">Select the type of care you need.</div>
+                        <div class="autosave-badge">Autosave Active</div>
+                    </div>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+
+                    <!-- STEP 1: Specialty -->
+                    <div class="wizard-step" id="step-1">
+                        <h2 class="wizard-title">Which specialty should we book for you?</h2>
+                        <div class="specialty-grid">
+                            <div class="specialty-card" onclick="selectSpecialty(this, 'Cardiology')">
+                                <div class="spec-icon">CRD</div>
+                                <h3>Cardiology</h3>
+                                <p>Heart health, blood pressure, palpitations, and preventive cardiac care.</p>
+                            </div>
+                            <div class="specialty-card" onclick="selectSpecialty(this, 'Dermatology')">
+                                <div class="spec-icon">DER</div>
+                                <h3>Dermatology</h3>
+                                <p>Skin, hair, and nail concerns with fast consultations for common conditions.</p>
+                            </div>
+                            <div class="specialty-card" onclick="selectSpecialty(this, 'Pediatrics')">
+                                <div class="spec-icon">PDS</div>
+                                <h3>Pediatrics</h3>
+                                <p>Child wellness, vaccinations, growth monitoring, and sick visits.</p>
+                            </div>
+                            <div class="specialty-card" onclick="selectSpecialty(this, 'Orthopedics')">
+                                <div class="spec-icon">ORT</div>
+                                <h3>Orthopedics</h3>
+                                <p>Bones, joints, mobility, injuries, and recovery-focused treatment plans.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Doctor -->
+                    <div class="wizard-step hidden" id="step-2">
+                        <h2 class="wizard-title">Who would you like to see?</h2>
+                        <div class="doctor-grid" id="doctor-grid"></div>
+                    </div>
+
+                    <!-- STEP 3: Date & Time -->
+                    <div class="wizard-step hidden" id="step-3">
+                        <h2 class="wizard-title">When works best for your appointment?</h2>
+                        <p class="section-label">Choose a day</p>
+                        <div class="day-grid" id="day-grid"></div>
+                        <p class="section-label" id="time-label">Choose a time</p>
+                        <div class="time-grid" id="time-grid"></div>
+                    </div>
+
+                    <!-- STEP 4: Confirmation -->
+                    <div class="wizard-step hidden" id="step-4">
+                        <h2 class="wizard-title">Review and confirm your booking.</h2>
+                        <div class="confirm-box">
+                            <div class="confirm-row">
+                                <span class="confirm-key">Specialty</span>
+                                <span class="confirm-val" id="confirm-specialty">—</span>
+                            </div>
+                            <div class="confirm-row">
+                                <span class="confirm-key">Doctor</span>
+                                <span class="confirm-val" id="confirm-doctor">—</span>
+                            </div>
+                            <div class="confirm-row">
+                                <span class="confirm-key">Date</span>
+                                <span class="confirm-val" id="confirm-date">—</span>
+                            </div>
+                            <div class="confirm-row">
+                                <span class="confirm-key">Time</span>
+                                <span class="confirm-val" id="confirm-time">—</span>
+                            </div>
+                        </div>
+                        <div class="confirm-note">
+                            <p>By confirming, you agree to arrive 10 minutes early and bring a valid ID. A confirmation email will be sent to you shortly after booking.</p>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5: Success -->
+                    <div class="wizard-step hidden" id="step-5">
+                        <div class="success-box">
+                            <div class="success-icon">✓</div>
+                            <h2>Booking Confirmed!</h2>
+                            <p>Your appointment has been successfully booked. Please check your email for confirmation details.</p>
+                            <a href="index.html" class="btn-back-home">Return to Home</a>
+                        </div>
+                    </div>
+
+                    <!-- Nav Buttons -->
+                    <div class="wizard-nav" id="wizard-nav">
+                        <button class="btn-back" onclick="prevStep()" id="btn-back">Back</button>
+                        <button class="btn-continue" onclick="nextStep()" id="btn-continue">Continue</button>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Summary Panel -->
+                <div class="summary-panel" id="summary-panel">
+                    <div class="summary-item">
+                        <div class="summary-key">Specialty</div>
+                        <div class="summary-val" id="sum-specialty">Not selected</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-key">Doctor</div>
+                        <div class="summary-val" id="sum-doctor">Not selected</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-key">Date</div>
+                        <div class="summary-val" id="sum-date">Not selected</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-key">Time</div>
+                        <div class="summary-val" id="sum-time">Not selected</div>
+                    </div>
+                    <div class="summary-note" id="summary-note">
+                        Your progress is stored locally in this browser so patients can safely resume later.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </body>
+    <script>
+        var currentStep = 1;
+        var totalSteps = 4;
+
+        var bookingData = {
+            specialty: '',
+            doctor: '',
+            doctorFull: '',
+            date: '',
+            time: ''
+        };
+
+        var doctors = {
+            'Cardiology': [
+                { name: 'Dr. Alicia Mendoza', title: 'Consultant Cardiologist', exp: '12 yrs exp', branch: 'Central Branch', slots: { 'Sat': ['09:00 AM', '11:00 AM', '02:00 PM'], 'Tue': ['10:00 AM', '03:00 PM', '05:00 PM'], 'Wed': [] } },
+                { name: 'Dr. Ethan Cruz', title: 'Cardiac Imaging Specialist', exp: '9 yrs exp', branch: 'North Branch', slots: { 'Sat': ['10:00 AM', '01:30 PM', '04:30 PM'], 'Tue': ['09:00 AM', '11:30 AM', '02:00 PM'], 'Wed': ['10:00 AM', '01:30 PM', '04:30 PM'] } }
+            ],
+            'Dermatology': [
+                { name: 'Dr. Sofia Reyes', title: 'Clinical Dermatologist', exp: '8 yrs exp', branch: 'South Branch', slots: { 'Mon': ['08:00 AM', '10:00 AM'], 'Wed': ['01:00 PM', '03:00 PM', '05:00 PM'], 'Fri': ['09:00 AM'] } },
+                { name: 'Dr. Marcus Tan', title: 'Cosmetic Dermatology', exp: '11 yrs exp', branch: 'East Branch', slots: { 'Tue': ['10:00 AM', '12:00 PM'], 'Thu': ['09:00 AM', '02:00 PM', '04:00 PM'], 'Sat': ['11:00 AM', '01:00 PM'] } }
+            ],
+            'Pediatrics': [
+                { name: 'Dr. Hannah Lim', title: 'General Pediatrician', exp: '7 yrs exp', branch: 'Central Branch', slots: { 'Mon': ['09:00 AM', '11:00 AM', '02:00 PM'], 'Thu': ['10:00 AM', '12:00 PM'], 'Fri': ['08:00 AM', '10:00 AM', '01:00 PM'] } },
+                { name: 'Dr. James Ocampo', title: 'Neonatal Specialist', exp: '15 yrs exp', branch: 'West Branch', slots: { 'Tue': ['09:00 AM'], 'Wed': ['10:00 AM', '02:00 PM', '04:00 PM'], 'Sat': ['09:00 AM', '11:00 AM'] } }
+            ],
+            'Orthopedics': [
+                { name: 'Dr. Carlos Navarro', title: 'Sports Medicine Orthopedic', exp: '10 yrs exp', branch: 'North Branch', slots: { 'Mon': ['08:00 AM', '10:00 AM', '01:00 PM'], 'Wed': ['09:00 AM', '11:00 AM'], 'Fri': ['10:00 AM', '12:00 PM', '03:00 PM'] } },
+                { name: 'Dr. Patricia Gomez', title: 'Joint Replacement Specialist', exp: '13 yrs exp', branch: 'South Branch', slots: { 'Tue': ['08:00 AM', '10:00 AM'], 'Thu': ['09:00 AM', '11:00 AM', '02:00 PM'], 'Sat': ['10:00 AM', '12:00 PM'] } }
+            ]
+        };
+
+        var weekDays = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+        var weekDates = ['Apr 4', 'Apr 5', 'Apr 6', 'Apr 7', 'Apr 8', 'Apr 9', 'Apr 10'];
+        var weekFull = ['Sat, Apr 4, 2026', 'Sun, Apr 5, 2026', 'Mon, Apr 6, 2026', 'Tue, Apr 7, 2026', 'Wed, Apr 8, 2026', 'Thu, Apr 9, 2026', 'Fri, Apr 10, 2026'];
+
+        var selectedDoctorObj = null;
+        var selectedDayIndex = -1;
+
+        function loadSaved() {
+            var saved = localStorage.getItem('healthsync_booking');
+            if (saved) {
+                bookingData = JSON.parse(saved);
+                updateSummary();
+                if (bookingData.specialty) document.getElementById('summary-note').innerText = 'Progress detected. Patients can leave and return later without losing their selections.';
+            }
+        }
+
+        function saveProgress() {
+            localStorage.setItem('healthsync_booking', JSON.stringify(bookingData));
+        }
+
+        function updateSummary() {
+            document.getElementById('sum-specialty').innerText = bookingData.specialty || 'Not selected';
+            document.getElementById('sum-doctor').innerText = bookingData.doctor || 'Not selected';
+            document.getElementById('sum-date').innerText = bookingData.date || 'Not selected';
+            document.getElementById('sum-time').innerText = bookingData.time || 'Not selected';
+        }
+
+        function updateProgress() {
+            var pct = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = pct + '%';
+            document.getElementById('step-label').innerText = 'Step ' + currentStep + ' of ' + totalSteps;
+            var descs = ['Select the type of care you need.', 'Choose a doctor matched to your specialty.', 'Pick an available date and time.', 'Review and confirm your appointment.'];
+            document.getElementById('step-desc').innerText = descs[currentStep - 1];
+        }
+
+        function selectSpecialty(card, name) {
+            var cards = document.querySelectorAll('.specialty-card');
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('selected');
+            }
+            card.classList.add('selected');
+            bookingData.specialty = name;
+            bookingData.doctor = '';
+            bookingData.date = '';
+            bookingData.time = '';
+            updateSummary();
+            saveProgress();
+        }
+
+        function buildDoctorGrid() {
+            var grid = document.getElementById('doctor-grid');
+            grid.innerHTML = '';
+            var list = doctors[bookingData.specialty];
+            for (var i = 0; i < list.length; i++) {
+                var d = list[i];
+                var card = document.createElement('div');
+                card.className = 'doctor-card';
+                card.setAttribute('data-index', i);
+                card.innerHTML = '<h3>' + d.name + '</h3><p class="doc-title">' + d.title + '</p><div class="doc-tags"><span class="doc-tag">' + d.exp + '</span><span class="doc-tag">' + d.branch + '</span></div>';
+                card.onclick = (function(doc, el) {
+                    return function() { selectDoctor(doc, el); };
+                })(d, card);
+                grid.appendChild(card);
+                if (bookingData.doctor === d.name) {
+                    card.classList.add('selected');
+                    selectedDoctorObj = d;
+                }
+            }
+        }
+
+        function selectDoctor(doc, card) {
+            var cards = document.querySelectorAll('.doctor-card');
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('selected');
+            }
+            card.classList.add('selected');
+            selectedDoctorObj = doc;
+            bookingData.doctor = doc.name;
+            bookingData.date = '';
+            bookingData.time = '';
+            updateSummary();
+            saveProgress();
+        }
+
+        function buildDayGrid() {
+            var grid = document.getElementById('day-grid');
+            grid.innerHTML = '';
+            for (var i = 0; i < weekDays.length; i++) {
+                var day = weekDays[i];
+                var slots = selectedDoctorObj.slots[day] || [];
+                var card = document.createElement('div');
+                card.className = 'day-card' + (slots.length === 0 ? ' no-slots' : '');
+                card.setAttribute('data-index', i);
+                card.innerHTML = '<strong>' + day + '</strong><span>' + weekDates[i] + '</span><small>' + slots.length + ' slots</small>';
+                if (slots.length > 0) {
+                    card.onclick = (function(idx, el) {
+                        return function() { selectDay(idx, el); };
+                    })(i, card);
+                }
+                grid.appendChild(card);
+                if (bookingData.date === weekFull[i]) {
+                    card.classList.add('selected');
+                    selectedDayIndex = i;
+                    buildTimeGrid(i);
+                }
+            }
+        }
+
+        function selectDay(idx, card) {
+            var cards = document.querySelectorAll('.day-card');
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('selected');
+            }
+            card.classList.add('selected');
+            selectedDayIndex = idx;
+            bookingData.date = weekFull[idx];
+            bookingData.time = '';
+            updateSummary();
+            saveProgress();
+            buildTimeGrid(idx);
+        }
+
+        function buildTimeGrid(dayIdx) {
+            var grid = document.getElementById('time-grid');
+            grid.innerHTML = '';
+            var day = weekDays[dayIdx];
+            var slots = selectedDoctorObj.slots[day] || [];
+            if (slots.length === 0) {
+                grid.innerHTML = '<div class="no-time-msg">No open slots for this doctor on the selected day. Choose another date.</div>';
+                return;
+            }
+            for (var i = 0; i < slots.length; i++) {
+                var time = slots[i];
+                var card = document.createElement('div');
+                card.className = 'time-card';
+                card.innerHTML = '<strong>' + time + '</strong><span>Available with ' + selectedDoctorObj.name + '</span>';
+                card.onclick = (function(t, el) {
+                    return function() { selectTime(t, el); };
+                })(time, card);
+                grid.appendChild(card);
+                if (bookingData.time === time) {
+                    card.classList.add('selected');
+                }
+            }
+        }
+
+        function selectTime(time, card) {
+            var cards = document.querySelectorAll('.time-card');
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('selected');
+            }
+            card.classList.add('selected');
+            bookingData.time = time;
+            updateSummary();
+            saveProgress();
+        }
+
+        function fillConfirm() {
+            document.getElementById('confirm-specialty').innerText = bookingData.specialty;
+            document.getElementById('confirm-doctor').innerText = bookingData.doctor;
+            document.getElementById('confirm-date').innerText = bookingData.date;
+            document.getElementById('confirm-time').innerText = bookingData.time;
+        }
+
+        function showStep(n) {
+            for (var i = 1; i <= 5; i++) {
+                document.getElementById('step-' + i).classList.add('hidden');
+            }
+            document.getElementById('step-' + n).classList.remove('hidden');
+        }
+
+        function nextStep() {
+            if (currentStep === 1 && !bookingData.specialty) {
+                alert('Please select a specialty before continuing.');
+                return;
+            }
+            if (currentStep === 2 && !bookingData.doctor) {
+                alert('Please select a doctor before continuing.');
+                return;
+            }
+            if (currentStep === 3 && (!bookingData.date || !bookingData.time)) {
+                alert('Please select both a date and time before continuing.');
+                return;
+            }
+            if (currentStep === 4) {
+                localStorage.removeItem('healthsync_booking');
+                currentStep = 5;
+                showStep(5);
+                document.getElementById('wizard-nav').classList.add('hidden');
+                document.getElementById('wizard-top').classList.add('hidden');
+                return;
+            }
+            currentStep++;
+            showStep(currentStep);
+            updateProgress();
+            if (currentStep === 2) buildDoctorGrid();
+            if (currentStep === 3) buildDayGrid();
+            if (currentStep === 4) fillConfirm();
+        }
+
+        function prevStep() {
+            if (currentStep <= 1) return;
+            currentStep--;
+            showStep(currentStep);
+            updateProgress();
+            if (currentStep === 2) buildDoctorGrid();
+            if (currentStep === 3) buildDayGrid();
+        }
+
+        loadSaved();
+        updateProgress();
+    </script>
+</html>

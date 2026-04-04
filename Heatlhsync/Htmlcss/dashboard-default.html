@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Dashboard - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="portal-topbar">
+            <div class="portal-logo">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                </div>
+                <div>
+                    <div class="portal-logo-label">SECURE PORTAL</div>
+                    <div class="portal-logo-name">HealthSync Clinic</div>
+                </div>
+            </div>
+            <div class="portal-topbar-links">
+                <a href="index.html">Back to Website</a>
+                <button class="btn-clear-session" onclick="clearSession()">Clear Session</button>
+            </div>
+        </nav>
+
+        
+
+
+        <section class="dashboard-page">
+            <div class="dash-header">
+                <h1 class="dash-welcome" id="dash-welcome">Welcome back.</h1>
+                <p class="dash-subtext">Here is a general overview of the clinic's current status.</p>
+            </div>
+
+            <div class="dash-stats-grid">
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Branches</div>
+                    <div class="dash-stat-val">4</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Active Doctors</div>
+                    <div class="dash-stat-val">6</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Pending Approvals</div>
+                    <div class="dash-stat-val">3</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Today's Appointments</div>
+                    <div class="dash-stat-val">12</div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Recent Activity</h2>
+                <div class="dash-activity-list">
+                    <div class="dash-activity-item">
+                        <span class="activity-dot green"></span>
+                        <span>New appointment booked — Dr. Ethan Cruz, Cardiology</span>
+                        <span class="activity-time">2 min ago</span>
+                    </div>
+                    <div class="dash-activity-item">
+                        <span class="activity-dot yellow"></span>
+                        <span>Approval pending — Staff schedule update, North Branch</span>
+                        <span class="activity-time">15 min ago</span>
+                    </div>
+                    <div class="dash-activity-item">
+                        <span class="activity-dot green"></span>
+                        <span>Patient check-in confirmed — Dr. Hannah Lim, Pediatrics</span>
+                        <span class="activity-time">32 min ago</span>
+                    </div>
+                    <div class="dash-activity-item">
+                        <span class="activity-dot red"></span>
+                        <span>Appointment cancelled — Dr. Sofia Reyes, Dermatology</span>
+                        <span class="activity-time">1 hr ago</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-wizard-promo">
+                <div class="wizard-promo-label">Wizard Promise</div>
+                <div class="wizard-promo-title">Autosave on every step</div>
+                <div class="wizard-promo-sub">No lost progress if a patient pauses mid-booking.</div>
+            </div>
+        </section>
+    </body>
+    <script>
+        function logOut() {
+            localStorage.removeItem('healthsync_session');
+        }
+
+        function loadSession() {
+            var saved = localStorage.getItem('healthsync_session');
+            if (!saved) {
+                window.location.href = 'login.html';
+                return;
+            }
+            var session = JSON.parse(saved);
+            document.getElementById('dash-user-name').innerText = session.name;
+            document.getElementById('dash-role-badge').innerText = session.role;
+            document.getElementById('dash-welcome').innerText = 'Welcome back, ' + session.name + '.';
+        }
+
+        loadSession();
+    </script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Admin Dashboard - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="portal-topbar">
+            <div class="portal-logo">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                </div>
+                <div>
+                    <div class="portal-logo-label">SECURE PORTAL</div>
+                    <div class="portal-logo-name">HealthSync Clinic</div>
+                </div>
+            </div>
+            <div class="portal-topbar-links">
+                <a href="index.html">Back to Website</a>
+                <button class="btn-clear-session" onclick="clearSession()">Clear Session</button>
+            </div>
+        </nav>
+
+        <section class="dashboard-page">
+            <div class="dash-header">
+                <h1 class="dash-welcome" id="dash-welcome">Admin Panel</h1>
+                <p class="dash-subtext">Branch-wide control for schedules, approvals, and staffing.</p>
+            </div>
+
+            <div class="dash-stats-grid">
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Branches</div>
+                    <div class="dash-stat-val">4</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Active Doctors</div>
+                    <div class="dash-stat-val">6</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Pending Approvals</div>
+                    <div class="dash-stat-val">3</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Total Staff</div>
+                    <div class="dash-stat-val">18</div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Pending Approvals</h2>
+                <div class="approval-list">
+                    <div class="approval-item">
+                        <div class="approval-info">
+                            <strong>Schedule Change Request</strong>
+                            <span>Dr. Alicia Mendoza — Central Branch</span>
+                        </div>
+                        <div class="approval-actions">
+                            <button class="btn-approve" onclick="approveItem(this)">Approve</button>
+                            <button class="btn-reject" onclick="rejectItem(this)">Reject</button>
+                        </div>
+                    </div>
+                    <div class="approval-item">
+                        <div class="approval-info">
+                            <strong>New Staff Onboarding</strong>
+                            <span>Reception — South Branch</span>
+                        </div>
+                        <div class="approval-actions">
+                            <button class="btn-approve" onclick="approveItem(this)">Approve</button>
+                            <button class="btn-reject" onclick="rejectItem(this)">Reject</button>
+                        </div>
+                    </div>
+                    <div class="approval-item">
+                        <div class="approval-info">
+                            <strong>Leave Request</strong>
+                            <span>Dr. Marcus Tan — East Branch</span>
+                        </div>
+                        <div class="approval-actions">
+                            <button class="btn-approve" onclick="approveItem(this)">Approve</button>
+                            <button class="btn-reject" onclick="rejectItem(this)">Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Branch Overview</h2>
+                <div class="branch-grid">
+                    <div class="branch-card">
+                        <div class="branch-name">Central Branch</div>
+                        <div class="branch-stat">Doctors: 2</div>
+                        <div class="branch-stat">Today's Slots: 8</div>
+                        <div class="branch-status active">Active</div>
+                    </div>
+                    <div class="branch-card">
+                        <div class="branch-name">North Branch</div>
+                        <div class="branch-stat">Doctors: 2</div>
+                        <div class="branch-stat">Today's Slots: 6</div>
+                        <div class="branch-status active">Active</div>
+                    </div>
+                    <div class="branch-card">
+                        <div class="branch-name">South Branch</div>
+                        <div class="branch-stat">Doctors: 1</div>
+                        <div class="branch-stat">Today's Slots: 3</div>
+                        <div class="branch-status active">Active</div>
+                    </div>
+                    <div class="branch-card">
+                        <div class="branch-name">East Branch</div>
+                        <div class="branch-stat">Doctors: 1</div>
+                        <div class="branch-stat">Today's Slots: 4</div>
+                        <div class="branch-status active">Active</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        function logOut() {
+            localStorage.removeItem('healthsync_session');
+        }
+
+        function approveItem(btn) {
+            var item = btn.closest('.approval-item');
+            item.style.opacity = '0.5';
+            item.querySelector('.approval-actions').innerHTML = '<span class="approved-label">Approved</span>';
+        }
+
+        function rejectItem(btn) {
+            var item = btn.closest('.approval-item');
+            item.style.opacity = '0.5';
+            item.querySelector('.approval-actions').innerHTML = '<span class="rejected-label">Rejected</span>';
+        }
+
+        function loadSession() {
+            var saved = localStorage.getItem('healthsync_session');
+            if (!saved) {
+                window.location.href = 'login.html';
+                return;
+            }
+            var session = JSON.parse(saved);
+            document.getElementById('dash-user-name').innerText = session.name;
+            document.getElementById('dash-welcome').innerText = 'Welcome back, ' + session.name + '.';
+        }
+
+        loadSession();
+    </script>
+</html>

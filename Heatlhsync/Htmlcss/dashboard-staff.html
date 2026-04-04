@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Staff Dashboard - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="portal-topbar">
+            <div class="portal-logo">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                </div>
+                <div>
+                    <div class="portal-logo-label">SECURE PORTAL</div>
+                    <div class="portal-logo-name">HealthSync Clinic</div>
+                </div>
+            </div>
+            <div class="portal-topbar-links">
+                <a href="index.html">Back to Website</a>
+                <button class="btn-clear-session" onclick="clearSession()">Clear Session</button>
+            </div>
+        </nav>
+
+        <section class="dashboard-page">
+            <div class="dash-header">
+                <h1 class="dash-welcome" id="dash-welcome">Staff Panel</h1>
+                <p class="dash-subtext">Front desk and clinical coordination for daily operations.</p>
+            </div>
+
+            <div class="dash-stats-grid">
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Today's Appointments</div>
+                    <div class="dash-stat-val">12</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Checked In</div>
+                    <div class="dash-stat-val">5</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Pending Check-In</div>
+                    <div class="dash-stat-val">4</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Cancelled Today</div>
+                    <div class="dash-stat-val">3</div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Today's Appointment Queue</h2>
+                <div class="queue-list">
+                    <div class="queue-item">
+                        <div class="queue-time">09:00 AM</div>
+                        <div class="queue-info">
+                            <strong>Maria Santos</strong>
+                            <span>Cardiology — Dr. Alicia Mendoza</span>
+                        </div>
+                        <div class="queue-status checked-in">Checked In</div>
+                    </div>
+                    <div class="queue-item">
+                        <div class="queue-time">10:00 AM</div>
+                        <div class="queue-info">
+                            <strong>Jose Reyes</strong>
+                            <span>Dermatology — Dr. Sofia Reyes</span>
+                        </div>
+                        <div class="queue-status pending-check">Pending</div>
+                    </div>
+                    <div class="queue-item">
+                        <div class="queue-time">11:00 AM</div>
+                        <div class="queue-info">
+                            <strong>Anna Cruz</strong>
+                            <span>Pediatrics — Dr. Hannah Lim</span>
+                        </div>
+                        <div class="queue-status checked-in">Checked In</div>
+                    </div>
+                    <div class="queue-item">
+                        <div class="queue-time">01:30 PM</div>
+                        <div class="queue-info">
+                            <strong>Ricardo Navarro</strong>
+                            <span>Orthopedics — Dr. Carlos Navarro</span>
+                        </div>
+                        <div class="queue-status pending-check">Pending</div>
+                    </div>
+                    <div class="queue-item">
+                        <div class="queue-time">03:00 PM</div>
+                        <div class="queue-info">
+                            <strong>Elena Gomez</strong>
+                            <span>Cardiology — Dr. Ethan Cruz</span>
+                        </div>
+                        <div class="queue-status cancelled-status">Cancelled</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Quick Actions</h2>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="alert('Feature coming soon.')">Register Walk-In</button>
+                    <button class="quick-btn" onclick="alert('Feature coming soon.')">Print Queue</button>
+                    <button class="quick-btn" onclick="window.location.href='booking.html'">Open Booking Wizard</button>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        function logOut() {
+            localStorage.removeItem('healthsync_session');
+        }
+
+        function loadSession() {
+            var saved = localStorage.getItem('healthsync_session');
+            if (!saved) {
+                window.location.href = 'login.html';
+                return;
+            }
+            var session = JSON.parse(saved);
+            document.getElementById('dash-user-name').innerText = session.name;
+            document.getElementById('dash-welcome').innerText = 'Welcome back, ' + session.name + '.';
+        }
+
+        loadSession();
+    </script>
+</html>

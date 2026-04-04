@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>My Dashboard - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="portal-topbar">
+            <div class="portal-logo">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                </div>
+                <div>
+                    <div class="portal-logo-label">SECURE PORTAL</div>
+                    <div class="portal-logo-name">HealthSync Clinic</div>
+                </div>
+            </div>
+            <div class="portal-topbar-links">
+                <a href="index.html">Back to Website</a>
+                <button class="btn-clear-session" onclick="clearSession()">Clear Session</button>
+            </div>
+        </nav>
+
+        <section class="dashboard-page">
+            <div class="dash-header">
+                <h1 class="dash-welcome" id="dash-welcome">My Health Portal</h1>
+                <p class="dash-subtext">View your bookings, profile, and appointment reminders.</p>
+            </div>
+
+            <div class="dash-stats-grid">
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Upcoming Appointments</div>
+                    <div class="dash-stat-val">2</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Past Visits</div>
+                    <div class="dash-stat-val">7</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Active Reminders</div>
+                    <div class="dash-stat-val">1</div>
+                </div>
+                <div class="dash-stat-card">
+                    <div class="dash-stat-label">Preferred Branch</div>
+                    <div class="dash-stat-val" style="font-size:18px;">Central</div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Upcoming Appointments</h2>
+                <div class="user-appt-list">
+                    <div class="user-appt-card">
+                        <div class="appt-specialty-badge">Cardiology</div>
+                        <div class="appt-main">
+                            <strong>Dr. Ethan Cruz</strong>
+                            <span>Cardiac Imaging Specialist</span>
+                        </div>
+                        <div class="appt-detail">
+                            <span>Wed, Apr 8, 2026</span>
+                            <span>10:00 AM</span>
+                            <span>North Branch</span>
+                        </div>
+                        <button class="btn-cancel-appt" onclick="cancelAppt(this)">Cancel</button>
+                    </div>
+                    <div class="user-appt-card">
+                        <div class="appt-specialty-badge derm">Dermatology</div>
+                        <div class="appt-main">
+                            <strong>Dr. Sofia Reyes</strong>
+                            <span>Clinical Dermatologist</span>
+                        </div>
+                        <div class="appt-detail">
+                            <span>Fri, Apr 17, 2026</span>
+                            <span>09:00 AM</span>
+                            <span>South Branch</span>
+                        </div>
+                        <button class="btn-cancel-appt" onclick="cancelAppt(this)">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <h2 class="dash-section-title">Quick Actions</h2>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="window.location.href='booking.html'">Book an Appointment</button>
+                    <button class="quick-btn" onclick="alert('Feature coming soon.')">Update Profile</button>
+                    <button class="quick-btn" onclick="alert('Feature coming soon.')">View Past Visits</button>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        function logOut() {
+            localStorage.removeItem('healthsync_session');
+        }
+
+        function cancelAppt(btn) {
+            var card = btn.closest('.user-appt-card');
+            card.style.opacity = '0.5';
+            btn.innerText = 'Cancelled';
+            btn.disabled = true;
+        }
+
+        function loadSession() {
+            var saved = localStorage.getItem('healthsync_session');
+            if (!saved) {
+                window.location.href = 'login.html';
+                return;
+            }
+            var session = JSON.parse(saved);
+            document.getElementById('dash-user-name').innerText = session.name;
+            document.getElementById('dash-welcome').innerText = 'Hi, ' + session.name + '.';
+        }
+
+        loadSession();
+    </script>
+</html>

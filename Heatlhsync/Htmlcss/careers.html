@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Careers - Healthsync Clinic</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="header">EMERGENCY? Call 8700 or chat with us.</nav>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="/images/Healthsynclogo.png" alt="Logo"></a>
+                <a href="index.html"><span>Healthsync Clinic</span></a>
+            </div>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html">Careers</a>
+                <a href="login.html">Login</a>
+                <a href="booking.html" class="booking-btn">Booking</a>
+            </div>
+        </nav>
+
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <h1>Careers at Healthsync</h1>
+                <p>Join a team that's changing healthcare for the better.</p>
+            </div>
+        </section>
+
+        <section class="careers-intro">
+            <h2 class="values-title">Why Work With Us?</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"></div>
+                    <h3>Modern Facilities</h3>
+                    <p>Work in well-equipped, clean, and updated clinical environments across all branches.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"></div>
+                    <h3>Career Growth</h3>
+                    <p>We support continuing education, certifications, and promotion from within.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"></div>
+                    <h3>Collaborative Team</h3>
+                    <p>Our staff work closely together in a culture of respect, communication, and trust.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"></div>
+                    <h3>Meaningful Work</h3>
+                    <p>Every role at Healthsync directly contributes to better patient outcomes and lives.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-jobs">
+            <h2 class="values-title">Open Positions</h2>
+            <div class="jobs-filter">
+                <button class="job-filter-btn active" onclick="filterJobs(this, 'all')">All</button>
+                <button class="job-filter-btn" onclick="filterJobs(this, 'clinical')">Clinical</button>
+                <button class="job-filter-btn" onclick="filterJobs(this, 'admin')">Administrative</button>
+                <button class="job-filter-btn" onclick="filterJobs(this, 'tech')">Technical</button>
+            </div>
+            <div class="jobs-list">
+                <div class="job-card" data-type="clinical">
+                    <div class="job-left">
+                        <h3 class="job-title">General Physician</h3>
+                        <p class="job-branch">Central Branch</p>
+                        <p class="job-desc">Providing outpatient consultations, diagnosis, and referrals to specialists.</p>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-type-badge clinical-badge">Clinical</span>
+                        <span class="job-type-badge full-time-badge">Full-Time</span>
+                        <button class="btn-apply" onclick="applyJob(this)">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-card" data-type="clinical">
+                    <div class="job-left">
+                        <h3 class="job-title">Registered Nurse</h3>
+                        <p class="job-branch">North Branch · South Branch</p>
+                        <p class="job-desc">Assisting doctors during consultations and managing patient care coordination.</p>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-type-badge clinical-badge">Clinical</span>
+                        <span class="job-type-badge full-time-badge">Full-Time</span>
+                        <button class="btn-apply" onclick="applyJob(this)">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-card" data-type="admin">
+                    <div class="job-left">
+                        <h3 class="job-title">Front Desk Coordinator</h3>
+                        <p class="job-branch">East Branch</p>
+                        <p class="job-desc">Managing patient check-ins, scheduling, and front-of-clinic operations.</p>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-type-badge admin-badge-job">Administrative</span>
+                        <span class="job-type-badge full-time-badge">Full-Time</span>
+                        <button class="btn-apply" onclick="applyJob(this)">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-card" data-type="admin">
+                    <div class="job-left">
+                        <h3 class="job-title">Medical Records Officer</h3>
+                        <p class="job-branch">Central Branch</p>
+                        <p class="job-desc">Maintaining accurate patient records, files, and documentation in compliance with standards.</p>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-type-badge admin-badge-job">Administrative</span>
+                        <span class="job-type-badge part-time-badge">Part-Time</span>
+                        <button class="btn-apply" onclick="applyJob(this)">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-card" data-type="tech">
+                    <div class="job-left">
+                        <h3 class="job-title">Medical Laboratory Technician</h3>
+                        <p class="job-branch">South Branch</p>
+                        <p class="job-desc">Performing laboratory tests and analysis to support clinical diagnosis.</p>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-type-badge tech-badge-job">Technical</span>
+                        <span class="job-type-badge full-time-badge">Full-Time</span>
+                        <button class="btn-apply" onclick="applyJob(this)">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-card" data-type="tech">
+                    <div class="job-left">
+                        <h3 class="job-title">Radiology Technologist</h3>
+                        <p class="job-branch">North Branch</p>
+                        <p class="job-desc">Operating imaging equipment and assisting radiologists with patient scans.</p>
+                    </div>
+                    <div class="job-right">
+                        <span class="job-type-badge tech-badge-job">Technical</span>
+                        <span class="job-type-badge full-time-badge">Full-Time</span>
+                        <button class="btn-apply" onclick="applyJob(this)">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        function filterJobs(btn, type) {
+            var btns = document.querySelectorAll('.job-filter-btn');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove('active');
+            }
+            btn.classList.add('active');
+
+            var cards = document.querySelectorAll('.job-card');
+            for (var i = 0; i < cards.length; i++) {
+                if (type === 'all' || cards[i].getAttribute('data-type') === type) {
+                    cards[i].style.display = 'flex';
+                } else {
+                    cards[i].style.display = 'none';
+                }
+            }
+        }
+
+        function applyJob(btn) {
+            var title = btn.closest('.job-card').querySelector('.job-title').innerText;
+            alert('Thank you for your interest in the ' + title + ' position! Our HR team will contact you shortly.');
+        }
+    </script>
+</html>
