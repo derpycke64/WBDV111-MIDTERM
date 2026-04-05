@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo-icon">
+                    <a href="#"><img src="../images/SWIFTCARTLOGO.png" alt="Swiftcart Logo"></a>
+                </div>
+                <div class="logo-title">
+                    <span>Swiftcart</span>
+                </div>
+                <div class="deliver-to">
+                    <a href="#">
+                        <span>Deliver to</span>
+                        <span style="color: rgb(0, 0, 0); font-weight: 600;">Philippines</span>
+                    </a>
+                </div>
+                <form class="search-form">
+                    <input class="search-input" type="search" placeholder="Search in Swiftcart">
+                    <button class="search-button" type="submit"><img src="../images/Magnifying_glass_icon.svg.png" alt="Search" style="width: 14px; min-height: 10px;"></button>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+             <div>
+                <a href="#" style="text-decoration: none; color: #2c1aca; font-family:Verdana, Geneva, Tahoma, sans-serif;"><img src="../images/263142.png" alt="Cart" style="width: 40px;">Cart</a>
+            </div>
+            <div class="login-link">
+                <button class="logout-btn" onclick="window.location.href='login.html'" style="width: 100%;">Logout</button>
+            </div>
+        </nav>
+        <main class="dashboard-container">
+            <aside class="sidebar">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 70px; height: 70px; background: #eee; border-radius: 50%; margin: 0 auto 10px;"></div>
+                    <h3 style="font-size: 18px;">Juan Dela Cruz</h3>
+                    <p style="font-size: 12px; color: #888;">juan.dc@email.com</p>
+                </div>
+                
+                <nav>
+                    <a href="#" class="sidebar-link active">My Orders</a>
+                    <a href="#" class="sidebar-link"> Wishlist</a>
+                    <a href="#" class="sidebar-link">Payment Methods</a>
+                    <a href="#" class="sidebar-link">Account Settings</a>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                    <a href="#" class="sidebar-link">Support</a>
+                </nav>
+            </aside>
+
+            <section>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <h2 style="margin: 0;">Order History</h2>
+                    <span style="color: #888; font-size: 14px;">Showing last 3 months</span>
+                </div>
+
+                <div class="glass-panel" style="max-width: 100%; margin: 0; padding: 0; overflow: hidden;">
+                    <table class="data-table" style="margin-top: 0;">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Product</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#SC-8821</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 40px; height: 40px; background: #eee; border-radius: 5px;"></div>
+                                        <span>Wireless Earbuds Pro</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge badge-process">In Transit</span></td>
+                                <td>₱1,499.00</td>
+                            </tr>
+                            <tr>
+                                <td>#SC-8710</td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 40px; height: 40px; background: #eee; border-radius: 5px;"></div>
+                                        <span>Mechanical Keyboard G</span>
+                                    </div>
+                                </td>
+                                <td><span class="badge badge-success">Delivered</span></td>
+                                <td>₱3,200.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </body>
+    <footer class="footer">
+        <div>
+            <h2 class="logo-title">Swiftcart</h2>
+            <p>Copyright by westley</p>
+            <p>The Philippines' fastest growing e-commerce platform.</p>
+        </div>
+        <div>
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="about.html">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</html>

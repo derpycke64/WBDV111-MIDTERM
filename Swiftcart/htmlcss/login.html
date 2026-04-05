@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Login - Swiftcart</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo-icon">
+                    <a href="#"><img src="../images/SWIFTCARTLOGO.png" alt="Swiftcart Logo"></a>
+                </div>
+                <div class="logo-title">
+                    <span>Swiftcart</span>
+                </div>
+                <div class="deliver-to">
+                    <a href="#">
+                        <span>Deliver to</span>
+                        <span style="color: rgb(0, 0, 0); font-weight: 600;">Philippines</span>
+                    </a>
+                </div>
+                <form class="search-form">
+                    <input class="search-input" type="search" placeholder="Search in Swiftcart">
+                    <button class="search-button" type="submit"><img src="../images/Magnifying_glass_icon.svg.png" alt="Search" style="width: 14px; min-height: 10px;"></button>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+             <div>
+                <a href="#" style="text-decoration: none; color: #2c1aca; font-family:Verdana, Geneva, Tahoma, sans-serif;"><img src="../images/263142.png" alt="Cart" style="width: 40px;">Cart</a>
+            </div>
+        </nav>
+        <main>
+            <div class="glass-panel">
+                <h2 style="margin-bottom: 10px; font-size: 32px;">Welcome Back</h2>
+                <p style="color:#888; margin-bottom: 30px;">Please enter your details to sign in.</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="admin@swiftcart.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" id="loginBtn" class="btn-login">Sign In</button>
+                    <p id="errorMessage" style="color: red; font-size: 13px; margin-top: 10px; display: none;">Invalid credentials. Try again.</p>
+                </form>
+            </div>
+        </main>
+        <footer class="footer">
+            <div>
+                <h2 class="logo-title">Swiftcart</h2>
+                <p>Copyright by westley</p>
+                <p>The Philippines' fastest growing e-commerce platform.</p>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="about.html">About Us</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </footer>
+    </body>
+    <script>if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value.toLowerCase();
+        const password = document.getElementById('password').value;
+        const errorMsg = document.getElementById('errorMessage');
+
+        // Credentials Setup
+        const adminEmail = "admin@swiftcart.com";
+        const userEmail = "user@swiftcart.com"; 
+        const commonPassword = "password123";
+
+        if (password === commonPassword) {
+            if (email === adminEmail) {
+                
+                alert("Welcome, Admin!");
+                window.location.href = "admin.html";
+            } 
+            else if (email === userEmail || email.includes("@")) {
+                
+                alert("Login Successful!");
+                window.location.href = "user.html";
+            }
+        } else {
+           
+            errorMsg.innerText = "Invalid password. Hint: password123";
+            loginForm.style.animation = "shake 0.2s ease-in-out 0s 2";
+        }
+    });
+}
+
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(5px); }
+        50% { transform: translateX(-5px); }
+        100% { transform: translateX(0); }
+    }
+`;
+document.head.appendChild(style);
+</script>
+</html>

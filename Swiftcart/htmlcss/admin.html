@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Admin Dashboard - Swiftcart</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo-icon">
+                    <a href="index.html"><img src="../images/SWIFTCARTLOGO.png" alt="Swiftcart Logo"></a>
+                </div>
+                <div class="logo-title">
+                    <span>Swiftcart</span>
+                    <span style="font-size: 12px; color: #666; display: block; margin-top: -5px;">Admin Panel</span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="#">Statistics</a>
+                <a href="#">Manage Users</a>
+                <a href="#">Inventory</a>
+                <a href="#">Reports</a>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <a href="index.html" style="text-decoration: none; color: #157fd6; font-size: 14px; font-weight: 600;">Main Site</a>
+                
+                <div class="login-link" style="margin: 0;">
+                    <a href="#" style="background: #157fd6; padding: 8px 16px;">+ Add Product</a>
+                </div>
+
+                <button class="logout-btn" onclick="window.location.href='login.html'">Logout</button>
+            </div>
+        </nav>
+        <main>
+            <header style="display:flex; justify-content:space-between; align-items:center; padding: 30px 0; border-bottom: 1px solid #eee; margin-bottom: 30px;">
+                <div>
+                    <h1 style="font-size: 32px;">Admin Dashboard</h1>
+                    <p style="color: #888;">Welcome back, System Administrator</p>
+                </div>
+                <div style="color: #157fd6; font-weight: 700;">
+                    Status: <span style="color: green;">● Online</span>
+                </div>
+            </header>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="btn-primary" style="width: auto;">+ Add New Product</button>
+            </div>
+            
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 20px;">
+                <div class="card" style="padding: 20px;"><h3>Total Sales</h3><p class="card-price">₱1,240,000</p></div>
+                <div class="card" style="padding: 20px;"><h3>Active Users</h3><p class="card-price" style="color: #157fd6;">8,421</p></div>
+                <div class="card" style="padding: 20px;"><h3>Orders Today</h3><p class="card-price" style="color: green;">142</p></div>
+            </div>
+
+            <h2 class="section-title">Inventory Management</h2>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Product Name</th><th>Price</th><th>Stock</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Wireless Earbuds</td><td>₱1,499</td><td>42</td><td><a href="#" style="color:blue;">Edit</a></td></tr>
+                    <tr><td>Gaming Mouse</td><td>₱2,100</td><td>15</td><td><a href="#" style="color:blue;">Edit</a></td></tr>
+                    <tr><td>External SSD</td><td>₱5,999</td><td>8</td><td><a href="#" style="color:blue;">Edit</a></td></tr>
+                    <tr><td>Wireless Keyboard</td><td>₱1,299</td><td>30</td><td><a href="#" style="color:blue;">Edit</a></td></tr>
+                    <tr><td>Laptop Stand</td><td>₱899</td><td>25</td><td><a href="#" style="color:blue;">Edit</a></td></tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+    <footer class="footer">
+        <div>
+            <h2 class="logo-title">Swiftcart</h2>
+            <p>Copyright by westley</p>
+            <p>The Philippines' fastest growing e-commerce platform.</p>
+        </div>
+        <div>
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="about.html">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</html>
