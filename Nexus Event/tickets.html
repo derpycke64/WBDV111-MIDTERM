@@ -1,0 +1,274 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Tickets</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* TICKETS-ONLY: acid-lime header top bar */
+    [data-page="tickets"] .site-header {
+      border-bottom: 5px solid var(--acid);
+    }
+    /* sticky summary panel gets hot-pink bg */
+    [data-page="tickets"] .checkout-summary {
+      background: var(--hot-pink);
+      border-color: var(--ink);
+    }
+    /* total box uses acid */
+    [data-page="tickets"] .total-box {
+      background: var(--acid);
+    }
+    /* ticket tier cards: acid top stripe */
+    [data-page="tickets"] > main > section:first-child .card {
+      border-top: 6px solid var(--acid);
+    }
+    [data-page="tickets"] .section-title {
+      letter-spacing: -0.02em;
+    }
+    /* dashed ticket divider between builder rows */
+    [data-page="tickets"] .ticket-row {
+      border-bottom-style: dashed;
+      border-bottom-width: 2px;
+    }
+    /* accordion: acid open state */
+    [data-page="tickets"] .accordion-item.open {
+      border-color: var(--acid);
+      box-shadow: 6px 6px 0 var(--acid);
+    }
+  </style>
+</head>
+<body data-page="tickets">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">Nexus Events</a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="events.html" data-nav="events">Events</a>
+        <a href="tickets.html" data-nav="tickets" class="active">Tickets</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+        <a href="admin-login.html" data-nav="admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Popular picks</h1>
+
+    <section class="grid">
+      <article class="card">
+        <span class="badge">Larper</span>
+        <h3>Larp Pass</h3>
+        <p>Larplarplarpsahur. General entry, standing zone, and merch lane access.</p>
+        <strong>$45</strong>
+        <a class="btn btn--ghost" href="contact.html">Ask for Group Rates</a>
+      </article>
+      <article class="card">
+        <span class="badge">Most Popular among Sigmas</span>
+        <h3>Sigma Pass</h3>
+        <p>Okay.. maybe you are sigma. In that case you get: Priority entry, lounge access, and 1 drink ticket.</p>
+        <strong>$85</strong>
+        <a class="btn btn--ghost" href="contact.html">Ask for Group Rates</a>
+      </article>
+      <article class="card">
+        <span class="badge">Mambo</span>
+        <h3>Eliteballknowledge Pass</h3>
+        <p>Yuknoball and for that....Balcony seating, backstage tour, and event photo pack.</p>
+        <strong>$140</strong>
+        <a class="btn btn--ghost" href="contact.html">Ask for Group Rates</a>
+      </article>
+    </section>
+
+    <section style="margin-top:2.5rem;">
+      <div class="panel">
+        <h2 class="section-title" style="margin-top:0;">Tickets</h2>
+        <div class="ticket-row" data-ticket-row data-price="45">
+          <div><strong>Larp Pass</strong><p>Entry + merch lane</p></div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$45 each</div>
+        </div>
+        <div class="ticket-row" data-ticket-row data-price="85">
+          <div><strong>Sigma Pass</strong><p>Priority entry + lounge</p></div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$85 each</div>
+        </div>
+        <div class="ticket-row" data-ticket-row data-price="140">
+          <div><strong>Eliteballknowledge Pass</strong><p>Balcony + backstage</p></div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$140 each</div>
+        </div>
+        <div class="total-box" style="margin-top:1.2rem;">
+          Total: <span data-total>$0</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:2.5rem;" id="checkout-section">
+      <h2 class="section-title">Checkout</h2>
+      <div class="checkout-grid">
+        <div style="display:grid;gap:1.4rem;">
+          <div class="panel">
+            <h3 class="checkout-panel-title">Select Event</h3>
+            <div class="form-grid">
+              <label>Event
+                <select id="checkout-event">
+                  <option value="">— Choose an event —</option>
+                  <option value="Welcome to the black parade · Apr 7 · Nexus Hall">Welcome to the black parade — Apr 7</option>
+                  <option value="Tilted towers · Apr 18 · Market Lane">Tilted towers — Apr 18</option>
+                  <option value="World's edge · Apr 22 · Rooftop">World's edge — Apr 22</option>
+                  <option value="Summoners Rift · Apr 27 · Main Hall">Summoners Rift — Apr 27</option>
+                  <option value="Anor Londo · May 3 · Creator Lounge">Anor Londo — May 3</option>
+                  <option value="Mike schmidt's scooping room · May 10 · Market Lane">Mike schmidt's scooping room — May 10</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3 class="checkout-panel-title">Attendee Info</h3>
+            <div class="form-grid">
+              <div class="checkout-row-2">
+                <label>First Name<input type="text" id="checkout-fname" placeholder="Westley"></label>
+                <label>Last Name<input type="text" id="checkout-lname" placeholder="Delos Santos"></label>
+              </div>
+              <label>Email Address<input type="email" id="checkout-email" placeholder="warda@email.com"></label>
+              <label>Phone Number <span style="font-weight:400;font-size:.85rem;">(optional)</span><input type="tel" id="checkout-phone" placeholder="+1 (555) 000-0000"></label>
+              <label>Special Requests <span style="font-weight:400;font-size:.85rem;">(optional)</span><textarea id="checkout-notes" placeholder="Accessibility needs, dietary restrictions, etc." style="min-height:80px;resize:vertical;"></textarea></label>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3 class="checkout-panel-title">Promo Code</h3>
+            <div class="promo-row">
+              <input type="text" id="checkout-promo" placeholder="e.g. Tungtungtungsahur">
+              <button class="btn btn--ghost" type="button" id="checkout-promo-btn">Apply</button>
+            </div>
+            <p id="checkout-promo-msg" style="margin:.5rem 0 0;font-weight:700;font-size:.9rem;display:none;"></p>
+            <p style="margin:.6rem 0 0;font-size:.82rem;font-weight:600;color:#555;">Try: <strong>TralaleloTralala</strong> (10% off) or <strong>ballerinocappucio</strong> ($20 off)</p>
+          </div>
+
+          <div class="panel">
+            <h3 class="checkout-panel-title">💳 Payment Details</h3>
+            <div class="payment-tabs" id="payment-tabs">
+              <button class="payment-tab active" data-method="card" type="button">💳 Card</button>
+              <button class="payment-tab" data-method="gcash" type="button">📱 GCash</button>
+              <button class="payment-tab" data-method="paypal" type="button">🅿️ PayPal</button>
+            </div>
+            <div id="pay-card" class="pay-panel">
+              <div class="form-grid" style="margin-top:1rem;">
+                <label>Cardholder Name<input type="text" id="checkout-card-name" placeholder="Westley Delos Santos"></label>
+                <label>Card Number<input type="text" id="checkout-card-num" placeholder="•••• •••• •••• ••••" maxlength="19"></label>
+                <div class="checkout-row-2">
+                  <label>Expiry<input type="text" id="checkout-card-exp" placeholder="MM / YY" maxlength="7"></label>
+                  <label>CVV<input type="text" id="checkout-card-cvv" placeholder="•••" maxlength="4"></label>
+                </div>
+              </div>
+            </div>
+            <div id="pay-gcash" class="pay-panel" style="display:none;">
+              <div class="form-grid" style="margin-top:1rem;">
+                <label>GCash Number<input type="tel" placeholder="09XX XXX XXXX" maxlength="11"></label>
+                <p style="margin:0;font-size:.85rem;font-weight:600;background:var(--acid);border:2px solid var(--ink);padding:.6rem .8rem;border-radius:10px;">You will receive a GCash OTP after clicking Pay Now.</p>
+              </div>
+            </div>
+            <div id="pay-paypal" class="pay-panel" style="display:none;">
+              <div class="form-grid" style="margin-top:1rem;">
+                <label>PayPal Email<input type="email" placeholder="you@paypal.com"></label>
+                <p style="margin:0;font-size:.85rem;font-weight:600;background:var(--cyan);border:2px solid var(--ink);padding:.6rem .8rem;border-radius:10px;">You'll be redirected to PayPal to complete payment securely.</p>
+              </div>
+            </div>
+            <label class="checkbox" style="margin-top:1rem;">
+              <input type="checkbox" id="checkout-terms">
+              I agree to the Nexus Events <a href="contact.html" class="link">Terms & Conditions</a>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel checkout-summary" style="position:sticky;top:90px;">
+            <h3 class="checkout-panel-title">🧾 Order Summary</h3>
+            <div id="summary-lines" style="display:grid;gap:.5rem;margin-bottom:1rem;">
+              <p id="summary-empty" style="color:#333;font-weight:600;font-size:.9rem;">No tickets selected yet. Use the Ticket Builder above.</p>
+            </div>
+            <div style="border-top:2px dashed var(--ink);padding-top:.8rem;display:grid;gap:.4rem;">
+              <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+              <div class="summary-row" id="summary-discount-row" style="display:none;color:green;"><span id="summary-discount-label">Discount</span><span id="summary-discount-val">-$0.00</span></div>
+              <div class="summary-row"><span>Service Fee (5%)</span><span id="summary-fee">$0.00</span></div>
+              <div class="summary-row summary-total"><span>Total</span><span id="summary-grand">$0.00</span></div>
+            </div>
+            <div id="summary-event-box" style="display:none;margin-top:1rem;background:var(--sun);border:2px solid var(--ink);border-radius:12px;padding:.7rem .9rem;">
+              <p style="margin:0;font-size:.82rem;font-weight:700;"><span id="summary-event-text"></span></p>
+            </div>
+            <button class="btn btn--big" type="button" id="checkout-pay-btn" style="width:100%;margin-top:1.2rem;justify-content:center;" disabled>Pay Now →</button>
+            <p style="margin:.6rem 0 0;font-size:.78rem;font-weight:600;text-align:center;color:#333;">Secured · Demo only — no real charge</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="checkout-modal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(18,18,18,.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+      <div class="panel" style="max-width:480px;width:calc(100% - 2rem);position:relative;animation:checkoutPop 0.35s cubic-bezier(0.34,1.56,0.64,1) both;max-height:80vh;overflow-y:auto;">
+        <div style="text-align:center;">
+          <div style="font-size:3.5rem;margin-bottom:.5rem;">🎉</div>
+          <h2 style="margin:0 0 .4rem;font-family:'Archivo Black',sans-serif;">You're in!</h2>
+          <p style="margin:0 0 1.2rem;font-size:1rem;font-weight:600;">Your tickets are confirmed. Check your email for the receipt and QR entry pass.</p>
+          <div id="modal-summary" style="background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:1rem;text-align:left;display:grid;gap:.4rem;margin-bottom:1rem;font-size:.88rem;font-weight:600;"></div>
+          <button class="btn btn--ghost" type="button" id="modal-qr-btn" style="width:100%;margin-bottom:1rem;justify-content:center;font-size:.95rem;">Show QR Code</button>
+          <div id="modal-qr-panel" style="display:none;background:var(--paper);border:3px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:1rem;">
+            <div style="background:var(--hot-pink);border-bottom:3px solid var(--ink);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-family:'Archivo Black',sans-serif;font-size:.9rem;">NEXUS EVENTS · ENTRY PASS</span>
+              <span id="modal-qr-ref" style="font-size:.75rem;font-weight:700;background:#fff;border:2px solid var(--ink);padding:.15rem .4rem;border-radius:6px;"></span>
+            </div>
+            <div style="padding:1.2rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;background:#fff;">
+              <img id="modal-qr-img" src="../images/qr.jpg" alt="QR Code" style="width:180px;height:180px;display:block;border:3px solid var(--ink);border-radius:10px;object-fit:contain;">
+              <span style="font-size:.72rem;font-weight:700;letter-spacing:.08em;color:#888;">SCAN THIS AT THE ENTRANCE</span>
+            </div>
+            <div style="background:var(--acid);border-top:3px solid var(--ink);padding:.5rem 1rem;display:flex;justify-content:space-between;align-items:center;">
+              <span id="modal-qr-name" style="font-size:.8rem;font-weight:700;"></span>
+              <span id="modal-qr-event" style="font-size:.75rem;font-weight:600;color:#555;text-align:right;max-width:55%;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section style="margin-top:2.5rem;">
+      <h2 class="section-title">FAQ</h2>
+      <div class="accordion" data-accordion>
+        <div class="accordion-item open">
+          <button type="button">What is included with a ticket?</button>
+          <div class="content">Every ticket includes entry, venue access, and the Nexus pop-up experience. Glow and Orbit add lounge perks.</div>
+        </div>
+        <div class="accordion-item">
+          <button type="button">Can I transfer my ticket?</button>
+          <div class="content">Yes. Tickets can be transferred up to 6 hours before doors open. Contact our support crew.</div>
+        </div>
+        <div class="accordion-item">
+          <button type="button">Do you offer group discounts?</button>
+          <div class="content">Groups of 8 or more get custom bundles. Hit us up on the contact page for a quick quote.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Tickets Desk</p>
+      <p>© <span data-year></span> Nexus Events by 𝙱̶𝚘̶𝚜̶𝚜̶𝚔̶𝚛̶𝚊̶𝚖̶𝙰̶𝚝̶𝚎̶𝚛̶𝚞̶ Westley. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

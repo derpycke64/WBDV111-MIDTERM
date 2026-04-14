@@ -1,0 +1,119 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Admin Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ADMIN-ONLY extra dark polish */
+    [data-page="admin"] body,
+    [data-page="admin"] {
+      background: #0e0e0e;
+    }
+    [data-page="admin"] .hero {
+      padding-top: 5rem;
+    }
+    [data-page="admin"] .hero h1 {
+      color: var(--acid);
+      text-shadow: 4px 4px 0 rgba(199,255,42,.2);
+    }
+    [data-page="admin"] .admin-login-card {
+      border-color: var(--acid);
+      box-shadow: 10px 10px 0 var(--acid);
+    }
+    [data-page="admin"] .admin-login-card h2 {
+      color: var(--acid);
+    }
+    [data-page="admin"] .btn[type="submit"] {
+      background: var(--acid);
+      color: var(--ink);
+      box-shadow: 8px 8px 0 rgba(199,255,42,.35);
+    }
+    [data-page="admin"] .btn[type="submit"]:hover {
+      box-shadow: 12px 12px 0 rgba(199,255,42,.5);
+    }
+    /* scanline overlay for that terminal feel */
+    [data-page="admin"] main::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(199,255,42,.025) 2px,
+        rgba(199,255,42,.025) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+    [data-page="admin"] .hero,
+    [data-page="admin"] .panel { position: relative; z-index: 1; }
+    /* warning badge */
+    .admin-warning {
+      background: #1e1e1e;
+      border: 2px solid #444;
+      border-left: 6px solid var(--acid);
+      border-radius: 12px;
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #aaa;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">Nexus Events</a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="events.html" data-nav="events">Events</a>
+        <a href="tickets.html" data-nav="tickets">Tickets</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+        <a href="admin-login.html" data-nav="admin" class="active">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero admin-hero">
+      <div>
+        <h1>Admin Control Room</h1>
+        <p style="color:#aaa;">Authorized team only. Log in to manage events, ticket tiers, venue schedules, and guest communications.</p>
+        <div class="tag-row">
+          <span class="tag">Events</span>
+          <span class="tag">Tickets</span>
+          <span class="tag">Venue Ops</span>
+          <span class="tag">Inbox</span>
+        </div>
+        <div class="admin-warning">
+          ⚠ This portal is for internal use only. Unauthorized access attempts are logged.
+        </div>
+      </div>
+      <div class="panel auth-card admin-login-card">
+        <h2 style="margin-top:0;">Admin Login</h2>
+        <p class="form-note">Demo access: <strong style="color:var(--acid);">admin</strong> / <strong style="color:var(--acid);">nexus2026</strong></p>
+        <form class="form-grid" data-admin-form>
+          <label style="color:var(--paper);">Admin ID<input type="text" placeholder="admin" required autocomplete="username" data-admin-user></label>
+          <label style="color:var(--paper);">Password<input type="password" placeholder="••••••••" required autocomplete="current-password" data-admin-pass></label>
+          <button class="btn btn--big" type="submit">Enter Dashboard</button>
+          <p class="status" data-admin-status></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Admin Access</p>
+      <p style="color:#666;">© <span data-year></span> Nexus Events by 𝙱̶𝚘̶𝚜̶𝚜̶𝚔̶𝚛̶𝚊̶𝚖̶𝙰̶𝚝̶𝚎̶𝚛̶𝚞̶ Westley. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
